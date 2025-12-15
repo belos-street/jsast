@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>基于Bun和Babel的CLI静态分析工具技术文档</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+        }
+        
+        h2 {
+            color: #34495e;
+            margin: 25px 0 15px;
+            padding-left: 10px;
+            border-left: 4px solid #3498db;
+        }
+        
+        h3 {
+            color: #7f8c8d;
+            margin: 20px 0 10px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            text-indent: 2em;
+        }
+        
+        code {
+            background-color: #f0f0f0;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        
+        pre {
+            background-color: #f0f0f0;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        
+        pre code {
+            background-color: transparent;
+            padding: 0;
+        }
+        
+        ul, ol {
+            margin: 15px 0;
+            padding-left: 40px;
+        }
+        
+        li {
+            margin-bottom: 5px;
+        }
+        
+        .directory-tree {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        
+        .table-container {
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        
+        table th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        
+        .module-card {
+            background-color: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .highlight {
+            background-color: #fff3cd;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>基于Bun和Babel的CLI静态分析工具技术文档</h1>
+        
+        <h2>1. 项目概述</h2>
+        <p>本项目是一个基于Bun和Babel的CLI静态分析工具，功能类似ESLint，用于检测JavaScript/TypeScript代码中的潜在问题和安全风险。工具通过Babel进行代码解析和AST遍历，实现自定义规则检查和多格式报告生成。</p>
+        
+        <h2>2. 文件目录结构</h2>
+        <div class="directory-tree">
+            c:/develop/code/personal/jsast/<br>
+            ├── .gitignore          # Git忽略配置<br>
+            ├── .prettierrc         # Prettier代码格式化配置<br>
+            ├── README.md           # 项目说明文档<br>
+            ├── bun.lock            # Bun依赖锁定文件<br>
+            ├── package.json        # 项目配置和依赖<br>
+            ├── tsconfig.json       # TypeScript配置<br>
+            ├── demo.ts             # 演示文件<br>
+            ├── docs.html           # 技术文档（当前文件）<br>
+            ├── sarif.json          # 生成的SARIF格式报告（示例）<br>
+            ├── src/                # 源代码目录<br>
+            │   ├── __test__/       # 测试目录<br>
+            │   ├── cli/            # CLI工具相关<br>
+            │   │   ├── index.ts    # CLI入口<br>
+            │   │   ├── options.ts  # 命令行选项定义<br>
+            │   │   └── runner.ts   # 分析任务执行器<br>
+            │   ├── core/           # 核心功能模块<br>
+            │   │   ├── index.ts    # 核心模块导出<br>
+            │   │   └── src/        # 核心实现代码<br>
+            │   │       ├── analyzer.ts # 静态分析器主类<br>
+            │   │       ├── parser.ts   # 代码解析模块<br>
+            │   │       └── traverser.ts # AST遍历模块<br>
+            │   ├── main.ts         # 项目主入口文件<br>
+            │   ├── report/         # 报告生成模块<br>
+            │   │   ├── index.ts    # 报告模块导出<br>
+            │   │   ├── reporter.ts # 控制台报告生成器<br>
+            │   │   └── sarif-generator.ts # SARIF格式报告生成器<br>
+            │   ├── rules/          # 规则定义目录<br>
+            │   │   ├── index.ts    # 规则导出入口<br>
+            │   │   ├── no-console-log.ts # 禁止console.log规则<br>
+            │   │   ├── no-var.ts   # 禁止var关键字规则<br>
+            │   │   └── no-command-injection.ts # 命令行注入检测规则<br>
+            │   └── utils/          # 工具函数<br>
+            │       └── file-utils.ts # 文件系统操作工具<br>
+            └── test-case/          # 测试用例目录<br>
+                └── test.js         # 测试文件<br>
+        </div>
+        
+        <h2>3. 各个模块的作用</h2>
+        
+        <h3>3.1 src/core/ - 核心功能模块</h3>
+        <div class="module-card">
+            <h4>index.ts</h4>
+            <ul>
+                <li>核心模块的统一导出入口</li>
+                <li>导出核心类型：Rule, ReportIssue</li>
+                <li>导出核心类和函数：StaticAnalyzer, parseCode, traverseAndCheck</li>
+                <li>简化其他模块对核心功能的访问，提供单一导入点</li>
+            </ul>
+            
+            <h4>src/analyzer.ts</h4>
+            <ul>
+                <li>静态分析器主类，协调各个模块的工作</li>
+                <li>管理规则集合</li>
+                <li>提供文件分析的主入口</li>
+                <li>核心方法：<code>analyzeFile(filename: string, code: string)</code></li>
+            </ul>
+            
+            <h4>src/parser.ts</h4>
+            <ul>
+                <li>负责代码解析，将源代码转换为AST</li>
+                <li>封装@babel/parser的功能</li>
+                <li>处理不同类型文件的解析配置（JS/TS/JSX）</li>
+                <li>核心方法：<code>parseCode(code: string, filename: string)</code></li>
+            </ul>
+            
+            <h4>src/traverser.ts</h4>
+            <ul>
+                <li>负责AST的遍历</li>
+                <li>封装@babel/traverse的功能</li>
+                <li>定义Rule和ReportIssue接口</li>
+                <li>核心方法：<code>traverseAndCheck(ast: File, rules: Rule[], filename: string)</code></li>
+            </ul>
+        </div>
+        
+        <h3>3.2 src/rules/ - 规则定义模块</h3>
+        <div class="module-card">
+            <h4>规则接口定义</h4>
+            <pre><code>interface Rule {
+  name: string;
+  description: string;
+  check: (node: Node, filename: string) => ReportIssue[];
+}</code></pre>
+            
+            <h4>index.ts</h4>
+            <ul>
+                <li>规则的统一导出入口</li>
+                <li>管理所有可用规则的注册和获取</li>
+                <li>提供规则查询接口</li>
+            </ul>
+            
+            <h4>基础规则</h4>
+            <ul>
+                <li><code>no-console-log.ts</code>: 禁止使用console.log</li>
+                <li><code>no-var.ts</code>: 禁止使用var关键字</li>
+            </ul>
+            
+            <h4>安全规则</h4>
+            <ul>
+                <li><code>no-command-injection.ts</code>: 检测命令行注入风险，识别不安全的child_process使用方式</li>
+            </ul>
+        </div>
+        
+        <h3>3.3 src/report/ - 报告生成模块</h3>
+        <div class="module-card">
+            <h4>index.ts</h4>
+            <ul>
+                <li>报告模块的统一导出入口</li>
+                <li>导出所有报告生成器：ConsoleReporter, SarifGenerator</li>
+            </ul>
+            
+            <h4>问题定义</h4>
+            <pre><code>interface ReportIssue {
+  rule: string;
+  message: string;
+  line: number;
+  column: number;
+  filename: string;
+}</code></pre>
+            
+            <h4>reporter.ts</h4>
+            <ul>
+                <li>控制台报告生成器</li>
+                <li>将检查结果以格式化的方式输出到控制台</li>
+                <li>支持按文件分组显示问题</li>
+                <li>核心方法：<code>generateReport(issues: ReportIssue[])</code></li>
+            </ul>
+            
+            <h4>sarif-generator.ts</h4>
+            <ul>
+                <li>SARIF格式报告生成器</li>
+                <li>将检查结果转换为SARIF（Static Analysis Results Interchange Format）格式</li>
+                <li>支持保存报告到文件</li>
+                <li>核心方法：
+                    <ul>
+                        <li><code>generateSarifReport(issues: ReportIssue[])</code> - 生成SARIF格式报告</li>
+                        <li><code>saveSarifReport(issues: ReportIssue[], outputPath?: string)</code> - 保存SARIF报告到文件</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        
+        <h3>3.4 src/utils/ - 工具函数模块</h3>
+        <div class="module-card">
+            <h4>file-utils.ts</h4>
+            <ul>
+                <li>文件系统操作工具函数</li>
+                <li>提供文件读取、文件类型判断、目录遍历等功能</li>
+                <li>核心方法：</li>
+                <ul>
+                    <li><code>readFile(filepath: string): Promise<string></code> - 读取文件内容</li>
+                    <li><code>isJsOrTsFile(filename: string): boolean</code> - 检查文件是否为JS/TS文件</li>
+                    <li><code>getJsTsFilesInDirectory(dirPath: string): Promise<string[]></code> - 获取目录下所有JS/TS文件</li>
+                </ul>
+            </ul>
+        </div>
+        
+        <h3>3.5 src/main.ts - 传统入口文件</h3>
+        <div class="module-card">
+            <ul>
+                <li>项目的传统入口点，提供简单的命令行接口</li>
+                <li>支持分析单个文件或目录下的所有JS/TS文件</li>
+                <li>内部使用StaticAnalyzer进行分析，自动生成控制台报告和SARIF报告</li>
+                <li>功能上与CLI工具部分重叠，但接口更简单</li>
+            </ul>
+        </div>
+        
+        <h3>3.6 src/cli/ - CLI工具模块</h3>
+        <div class="module-card">
+            <h4>index.ts</h4>
+            <ul>
+                <li>CLI工具的主入口</li>
+                <li>使用commander库解析命令行参数</li>
+                <li>协调CLI工作流程</li>
+                <li>支持的参数：路径、报告格式、规则选择、静默模式</li>
+            </ul>
+            
+            <h4>options.ts</h4>
+            <ul>
+                <li>定义CLI选项接口</li>
+                <li>提供选项验证逻辑</li>
+                <li>确保用户输入的参数有效</li>
+            </ul>
+            
+            <h4>runner.ts</h4>
+            <ul>
+                <li>执行分析任务的核心逻辑</li>
+                <li>处理文件或目录的分析请求</li>
+                <li>管理报告生成过程</li>
+                <li>支持选择特定规则</li>
+            </ul>
+        </div>
+        
+        <h3>3.6 test-case/ - 测试用例目录</h3>
+        <div class="module-card">
+            <h4>test.js</h4>
+            <ul>
+                <li>包含各种规则违反情况的测试文件</li>
+                <li>用于验证工具的规则检测能力</li>
+                <li>包含var关键字、console.log和命令行注入等测试案例</li>
+            </ul>
+        </div>
+        
+        <h2>4. 技术栈</h2>
+        <table>
+            <tr>
+                <th>技术</th>
+                <th>版本</th>
+                <th>用途</th>
+            </tr>
+            <tr>
+                <td>Bun</td>
+                <td>latest</td>
+                <td>运行时和包管理器</td>
+            </tr>
+            <tr>
+                <td>TypeScript</td>
+                <td>^5</td>
+                <td>开发语言，提供类型安全</td>
+            </tr>
+            <tr>
+                <td>@babel/parser</td>
+                <td>^7.28.5</td>
+                <td>代码解析，生成AST</td>
+            </tr>
+            <tr>
+                <td>@babel/traverse</td>
+                <td>^7.28.5</td>
+                <td>AST遍历</td>
+            </tr>
+            <tr>
+                <td>@babel/types</td>
+                <td>^7.28.5</td>
+                <td>AST节点类型定义</td>
+            </tr>
+            <tr>
+                <td>commander</td>
+                <td>^14.0.2</td>
+                <td>命令行参数解析</td>
+            </tr>
+        </table>
+        
+        <h2>5. 技术原理</h2>
+        
+        <h3>5.1 静态分析流程</h3>
+        <ol>
+            <li><strong>Parse（解析）</strong>：使用@babel/parser将代码解析为抽象语法树（AST）</li>
+            <li><strong>Traverse（遍历）</strong>：使用@babel/traverse遍历AST的每个节点</li>
+            <li><strong>Rule Check（规则检查）</strong>：对每个节点应用所有规则进行检查</li>
+            <li><strong>Report（报告）</strong>：收集所有规则发现的问题，生成格式化报告</li>
+        </ol>
+        
+        <h3>5.2 AST（抽象语法树）</h3>
+        <p>AST是代码的抽象表示，将代码结构化为树状数据结构。每个节点代表代码中的一个语法结构，如函数调用、变量声明等。静态分析工具通过分析这些节点来检测潜在问题。</p>
+        
+        <h3>5.3 命令行注入检测原理</h3>
+        <div class="highlight">
+            <p>命令行注入规则通过检测以下模式识别安全风险：</p>
+            <ul>
+                <li><code>child_process.exec('命令字符串')</code>使用动态拼接的命令</li>
+                <li><code>child_process.execSync('命令字符串')</code>使用动态拼接的命令</li>
+                <li><code>require('child_process').execFile('命令字符串')</code>使用动态拼接的命令</li>
+            </ul>
+            <p>规则会检查命令参数是否为模板字符串（TemplateLiteral）或二元表达式（BinaryExpression，如字符串拼接），这些都是潜在的命令注入风险点。</p>
+        </div>
+        
+        <h3>5.4 SARIF报告格式</h3>
+        <p>SARIF（Static Analysis Results Interchange Format）是一种用于静态分析工具结果交换的标准格式。本工具支持生成SARIF格式报告，便于与其他工具集成和分析。</p>
+        
+        <h2>6. 开发状态</h2>
+        
+        <h3>6.1 已完成功能</h3>
+        <ul>
+            <li>基础框架搭建（项目结构、依赖配置、核心接口）</li>
+            <li>静态分析器核心功能（解析、遍历、规则检查）</li>
+            <li>基础规则实现（no-var、no-console-log）</li>
+            <li>安全规则实现（no-command-injection）</li>
+            <li>控制台报告生成</li>
+            <li>SARIF格式报告生成</li>
+            <li>文件系统工具函数</li>
+            <li>CLI命令行工具</li>
+            <li>参数验证和处理</li>
+            <li>测试用例</li>
+            <li>技术文档</li>
+        </ul>
+        
+        <h2>7. 使用说明</h2>
+        
+        <h3>7.1 安装依赖</h3>
+        <pre><code>bun install</code></pre>
+        
+        <h3>7.2 通过主入口文件运行</h3>
+        <pre><code>bun run src/main.ts &lt;文件或目录路径&gt;</code></pre>
+        <p>例如：</p>
+        <pre><code>bun run src/main.ts test-case/test.js</code></pre>
+        <p>运行后会分析指定的文件或目录，并同时生成控制台报告和SARIF格式报告。</p>
+        
+        <h3>7.3 使用CLI工具</h3>
+        <pre><code>bun run src/cli/index.ts &lt;文件或目录路径&gt; [选项]</code></pre>
+        
+        <h4>7.3.1 CLI选项说明</h4>
+        <ul>
+            <li><code>&lt;path&gt;</code>：要分析的文件或目录路径（必填）</li>
+            <li><code>-f, --format &lt;format&gt;</code>：报告格式，可选值为console或sarif（默认同时生成两种格式）</li>
+            <li><code>-r, --rules &lt;rules&gt;</code>：要使用的规则，用逗号分隔（默认使用所有规则）</li>
+            <li><code>-s, --silent</code>：静默模式，不输出控制台信息（只影响console报告）</li>
+        </ul>
+        
+        <h4>7.3.2 示例</h4>
+        <ul>
+            <li>分析单个文件：</li>
+            <pre><code>bun run src/cli/index.ts test-case/test.js</code></pre>
+            
+            <li>分析整个目录：</li>
+            <pre><code>bun run src/cli/index.ts src/</code></pre>
+            
+            <li>只生成SARIF格式报告：</li>
+            <pre><code>bun run src/cli/index.ts test-case/test.js --format sarif</code></pre>
+            
+            <li>只使用特定规则：</li>
+            <pre><code>bun run src/cli/index.ts test-case/test.js --rules no-var,no-command-injection</code></pre>
+            
+            <li>静默模式：</li>
+            <pre><code>bun run src/cli/index.ts test-case/test.js --silent</code></pre>
+        </ul>
+        
+        <h2>8. 输出示例</h2>
+        
+        <h3>8.1 控制台报告示例</h3>
+        <pre><code>❌ 发现问题：
+============================================================
+
+📁 文件: test-case/test.js
+------------------------------------------------------------
+  🚨 [no-var] 禁止使用var关键字，请使用let或const
+     位置: 第 4 行, 第 0 列
+  🚨 [no-console-log] 禁止使用console.log
+     位置: 第 6 行, 第 0 列
+  🚨 [no-var] 禁止使用var关键字，请使用let或const
+     位置: 第 9 行, 第 2 列
+  🚨 [no-console-log] 禁止使用console.log
+     位置: 第 10 行, 第 2 列
+  🚨 [no-command-injection] 不安全的命令执行：exec 使用了动态拼接的命令字符串，存在命令注入风险
+     位置: 第 18 行, 第 0 列
+  🚨 [no-command-injection] 不安全的命令执行：execSync 使用了动态拼接的命令字符串，存在命令注入风险
+     位置: 第 19 行, 第 0 列
+  🚨 [no-command-injection] 不安全的命令执行：require('child_process').execFile 使用了动态拼接的命令字符串，存在命令注入风险
+     位置: 第 20 行, 第 0 列
+
+============================================================
+总计: 7 个问题
+✅ SARIF报告已保存到: sarif.json
+</code></pre>
+        
+        <h3>8.2 SARIF报告示例</h3>
+        <p>SARIF报告是JSON格式的文件，包含详细的分析结果和元数据。示例报告如下（部分内容）：</p>
+        <pre><code>{
+  "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "JS/TS Static Analyzer",
+          "fullName": "基于Bun和Babel的JS/TS静态分析工具",
+          "version": "1.0.0",
+          "informationUri": "https://github.com/user/jsast",
+          "rules": [
+            {
+              "id": "no-var",
+              "name": "no-var",
+              "shortDescription": {
+                "text": "禁止使用var关键字"
+              },
+              "helpUri": "https://example.com/rules/no-var",
+              "properties": {
+                "severity": "warning"
+              }
+            },
+            ...
+          ]
+        }
+      },
+      "results": [
+        {
+          "ruleId": "no-var",
+          "message": {
+            "text": "禁止使用var关键字，请使用let或const"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "test-case/test.js"
+                },
+                "region": {
+                  "startLine": 4,
+                  "startColumn": 0,
+                  "endLine": 4,
+                  "endColumn": 0
+                }
+              }
+            }
+          ],
+          "level": "warning"
+        },
+        ...
+      ],
+      "columnKind": "utf16CodeUnits"
+    }
+  ]
+}
+</code></pre>
+        
+        <h2>9. 扩展与开发</h2>
+        
+        <h3>9.1 添加新规则</h3>
+        <ol>
+            <li>在<code>src/rules/</code>目录下创建新的规则文件（如<code>new-rule.ts</code>）</li>
+            <li>实现Rule接口，定义规则名称、描述和检查逻辑</li>
+            <li>在<code>src/rules/index.ts</code>中导出新规则</li>
+        </ol>
+        
+        <h3>9.2 扩展报告格式</h3>
+        <ol>
+            <li>在<code>src/report/</code>目录下创建新的报告生成器文件</li>
+            <li>实现报告生成逻辑</li>
+            <li>在<code>src/report/index.ts</code>中导出新的报告生成器</li>
+            <li>在<code>src/cli/runner.ts</code>中添加对新报告格式的支持</li>
+        </ol>
+        
+        <h2>10. 未来计划</h2>
+        <ul>
+            <li>添加更多安全规则（如SQL注入、XSS检测等）</li>
+            <li>支持配置文件（如.jsastrc）</li>
+            <li>支持忽略特定文件或代码段</li>
+            <li>优化性能和分析速度</li>
+            <li>添加单元测试</li>
+            <li>支持更多报告格式</li>
+            <li>集成CI/CD流程</li>
+        </ul>
+    </div>
+</body>
+</html>

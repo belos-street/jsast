@@ -1,0 +1,23 @@
+{
+  "name": "jsast",
+  "version": "1.0.0",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/babel__core": "^7.20.5",
+    "@types/babel__parser": "^7.1.5",
+    "@types/babel__traverse": "^7.28.0",
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "@babel/core": "^7.28.5",
+    "@babel/parser": "^7.28.5",
+    "@babel/traverse": "^7.28.5",
+    "@babel/types": "^7.28.5",
+    "@types/commander": "^2.12.5",
+    "commander": "^14.0.2"
+  }
+}
