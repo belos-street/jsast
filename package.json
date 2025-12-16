@@ -1,13 +1,28 @@
 {
   "name": "jsast",
+  "description": "JavaScript static analysis security tool",
   "version": "1.0.0",
   "module": "index.ts",
   "type": "module",
+  "bin": {
+    "eslint-security": "dist/main.js"
+  },
+  "scripts": {
+    "dev": "bun run src/main.ts",
+    "build": "bun build src/main.ts --outdir dist --target bun",
+    "build:binary": "bun build src/main.ts --outfile bin/jsast --target bun --compile",
+    "test": "bun test",
+    "lint": "eslint src/**/*.ts",
+    "lint:fix": "eslint src/**/*.ts --fix",
+    "clean": "rm -rf dist bin"
+  },
   "devDependencies": {
     "@types/babel__core": "^7.20.5",
     "@types/babel__parser": "^7.1.5",
     "@types/babel__traverse": "^7.28.0",
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "eslint": "^9.39.2",
+    "typescript-eslint": "^8.50.0"
   },
   "peerDependencies": {
     "typescript": "^5"
@@ -18,6 +33,19 @@
     "@babel/traverse": "^7.28.5",
     "@babel/types": "^7.28.5",
     "@types/commander": "^2.12.5",
-    "commander": "^14.0.2"
-  }
+    "chalk": "^5.6.2",
+    "commander": "^14.0.2",
+    "figlet": "^1.9.4"
+  },
+  "license": "MIT",
+  "engines": {
+    "bun": ">=1.0.0"
+  },
+  "files": [
+    "dist",
+    "bin",
+    "configs",
+    "README.md",
+    "LICENSE"
+  ]
 }
