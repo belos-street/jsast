@@ -1,1 +1,1 @@
-export { CONFIG_DEFAULT } from './default'
+export { CONFIG_DEFAULT, FILE_NAME } from './default'

@@ -3,7 +3,8 @@
 import { createCommand } from './cli'
 
 const bootstrap = async () => {
-  const program = createCommand(process)
+  const { options } = createCommand(process)
+  console.log(options)
 }
 
 bootstrap()

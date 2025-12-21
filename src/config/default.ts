@@ -8,3 +8,7 @@ export const CONFIG_DEFAULT = {
   description,
   name
 } as const
+
+export const FILE_NAME = {
+  config: 'jsast.config.json'
+} as const
