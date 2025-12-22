@@ -8,6 +8,7 @@ import type { ReportIssue } from '@/report'
 export const noVarRule: Rule = {
   name: 'no-var',
   description: '禁止使用var关键字',
+  severity: 'medium',
   check(node: Node, filename: string): ReportIssue[] {
     const issues: ReportIssue[] = []
     if (node.type === 'VariableDeclaration' && node.kind === 'var' && node.loc) {

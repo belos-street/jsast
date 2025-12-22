@@ -1,4 +1,5 @@
-import type { Rule, ReportIssue } from '../../core'
+import type { Rule } from '..'
+import type { ReportIssue } from '@/report'
 import type { Node } from '@babel/types'
 
 /**
@@ -7,6 +8,7 @@ import type { Node } from '@babel/types'
 export const noConsoleLogRule: Rule = {
   name: 'no-console-log',
   description: '禁止使用console.log',
+  severity: 'low',
   check(node: Node, filename: string): ReportIssue[] {
     const issues: ReportIssue[] = []
     if (

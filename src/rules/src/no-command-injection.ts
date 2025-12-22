@@ -1,4 +1,5 @@
-import type { Rule, ReportIssue } from '../../core'
+import type { Rule } from '..'
+import type { ReportIssue } from '@/report'
 import type { Node } from '@babel/types'
 
 /**
@@ -7,6 +8,7 @@ import type { Node } from '@babel/types'
 export const noCommandInjectionRule: Rule = {
   name: 'no-command-injection',
   description: '检测命令行注入风险',
+  severity: 'high',
   check(node: Node, filename: string): ReportIssue[] {
     const issues: ReportIssue[] = []
 

@@ -1,6 +1,7 @@
+import type { Rule } from '@/rules'
 import { parseCode } from './parser'
 import { traverseAndCheck } from './traverser'
-import type { Rule, ReportIssue } from './traverser'
+import type { ReportIssue } from '@/report'
 
 /**
  * 静态分析器类
