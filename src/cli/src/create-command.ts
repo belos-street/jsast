@@ -4,7 +4,7 @@ import { initFiglet } from './init-figlet'
 import { validateArguments } from './validate-arguments'
 import type { Arguments } from '../type'
 
-export const createCommand = (process: NodeJS.Process): { program: Command; options: Arguments } => {
+export const createCommand = (process: NodeJS.Process): { program: Command; options: Required<Arguments> } => {
   //1. 初始化figlet
   console.log(initFiglet(CONFIG_DEFAULT.name))
 
@@ -18,7 +18,10 @@ export const createCommand = (process: NodeJS.Process): { program: Command; opti
   // 扫描项目参数
   program.requiredOption('-p, --project <path>', 'Project directory path to scan (e.g., /Users/project/src)')
   program.option('-o, --output <path>', 'Output file path for scan results (e.g., /Users/project/results)')
-  program.option('-r, --rules <path>', 'Rule configuration file path (e.g., /Users/config/security-rules.json)')
+  program.option(
+    '-r, --rules <path>',
+    'Rule configuration file path (e.g., /Users/config/security-rules.json). Must be a JSON file with "rules" field where keys are rule names and values are 0 (disabled) or 1 (enabled)'
+  )
 
   // 解析命令行参数
   program.parse(process.argv)
