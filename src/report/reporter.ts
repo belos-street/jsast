@@ -1,4 +1,4 @@
-import type { ReportIssue } from '../core/src/traverser'
+import type { ReportIssue } from './type'
 
 /**
  * 控制台报告生成器

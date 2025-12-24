@@ -1,4 +1,4 @@
-import type { ReportIssue } from '../core/src/traverser'
+import type { ReportIssue } from './type'
 import * as fs from 'fs/promises'
 
 /**

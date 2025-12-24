@@ -1,5 +1,6 @@
 import type { Arguments } from '@/cli'
 import { readFileSync } from 'fs'
+import type { RuleName } from '@/rules'
 
 export enum RuleStatus {
   Disable = 0,
@@ -7,10 +8,10 @@ export enum RuleStatus {
 }
 
 export type RuleConfig = {
-  rules: Record<string, RuleStatus>
+  rules: Record<RuleName, RuleStatus>
 }
 
-export const processRules = (args: Required<Arguments>): string[] => {
+export const processRules = (args: Required<Arguments>): RuleName[] => {
   const content = readFileSync(args.rules, 'utf-8')
   let config: RuleConfig
 
@@ -26,10 +27,10 @@ export const processRules = (args: Required<Arguments>): string[] => {
   }
 
   // Filter enabled rules (value 1)
-  const rules: string[] = []
+  const rules: RuleName[] = []
   Object.entries(config.rules).forEach(([ruleName, value]) => {
     if (value === RuleStatus.Enable) {
-      rules.push(ruleName)
+      rules.push(ruleName as RuleName)
     }
   })
 
