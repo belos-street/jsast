@@ -8,7 +8,8 @@ import { FILE_NAME } from '@/config'
 export const validateArguments = (args: Arguments): Required<Arguments> => {
   // Validate project path
   if (!existsSync(args.project)) {
-    throw new Error(`Project path does not exist: ${args.project}`)
+    console.error(`Error: Project path does not exist: ${args.project}`)
+    process.exit(1)
   }
 
   // Handle output path
@@ -25,7 +26,7 @@ export const validateArguments = (args: Arguments): Required<Arguments> => {
   }
 
   // Handle rules path
-  let rulesPath: string
+  let rulesPath: string | undefined
   if (args.rules) {
     // Use rules file specified in command line
     if (!validateAbsolutePath(args.rules)) {
@@ -35,7 +36,8 @@ export const validateArguments = (args: Arguments): Required<Arguments> => {
     }
 
     if (!existsSync(rulesPath)) {
-      throw new Error(`Rules file does not exist: ${rulesPath}`)
+      console.error(`Error: Rules file does not exist: ${rulesPath}`)
+      rulesPath = undefined
     }
   } else {
     // Try to read default config file in project root
@@ -43,8 +45,13 @@ export const validateArguments = (args: Arguments): Required<Arguments> => {
     if (existsSync(defaultConfigPath)) {
       rulesPath = defaultConfigPath
     } else {
-      throw new Error(`No rules file specified and ${FILE_NAME.config} not found in project root`)
+      console.error(`Error: No rules file specified and ${FILE_NAME.config} not found in project root`)
+      rulesPath = undefined
     }
+  }
+
+  if (!rulesPath) {
+    process.exit(1)
   }
 
   return {
