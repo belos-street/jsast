@@ -4,18 +4,27 @@ import { createCommand } from './cli'
 import { processRules, processFiles } from './parse'
 
 import { RuleManager } from './rules'
+import { StaticAnalyzer } from './core'
 
 const bootstrap = async () => {
+  //1. 解析命令行参数
   const { options } = createCommand(process)
 
+  //2. 处理规则参数
   const rules = processRules(options)
-
   const ruleManager = new RuleManager()
   ruleManager.registerRules(rules)
-  console.log('处理后的规则:', ruleManager.getAllRules())
 
+  //3. 处理项目路径参数
   const files = await processFiles({ projectPath: options.project })
-  console.log('要检测的文件:', files)
+
+  //4. 分析文件
+  const analyzer = new StaticAnalyzer(ruleManager.getAllRules())
+  const results = await analyzer.analyzeFiles(files)
+
+  // Flatten results
+  const allIssues = results.flat()
+  console.log('发现的问题:', allIssues)
 }
 
 bootstrap()

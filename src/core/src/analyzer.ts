@@ -29,4 +29,23 @@ export class StaticAnalyzer {
 
     return traverseAndCheck(ast, this.rules, filename)
   }
+
+  /**
+   * 分析单个文件路径
+   * @param filePath 文件路径
+   * @returns 检查出的问题列表
+   */
+  async analyzeFilePath(filePath: string): Promise<ReportIssue[]> {
+    const content = await Bun.file(filePath).text()
+    return this.analyzeFile(filePath, content)
+  }
+
+  /**
+   * 批量分析多个文件
+   * @param filePaths 文件路径列表
+   * @returns 每个文件的问题列表
+   */
+  async analyzeFiles(filePaths: string[]): Promise<ReportIssue[][]> {
+    return Promise.all(filePaths.map((filePath) => this.analyzeFilePath(filePath)))
+  }
 }
