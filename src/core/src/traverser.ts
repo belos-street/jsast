@@ -17,7 +17,12 @@ export function traverseAndCheck(ast: File, rules: Rule[], filename: string): Re
     enter: (path) => {
       for (const rule of rules) {
         const ruleIssues = rule.check(path.node, filename)
-        issues.push(...ruleIssues)
+        // 自动添加规则的severity到每个issue
+        const issuesWithSeverity = ruleIssues.map((issue) => ({
+          ...issue,
+          severity: rule.severity
+        }))
+        issues.push(...issuesWithSeverity)
       }
     }
   })

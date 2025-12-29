@@ -1,4 +1,4 @@
-import type { ReportIssue } from './type'
+import type { ReportIssue } from '../type'
 
 /**
  * 控制台报告生成器
@@ -10,14 +10,14 @@ export class ConsoleReporter {
    */
   generateReport(issues: ReportIssue[]): void {
     if (issues.length === 0) {
-      console.log('✅ 未发现任何问题')
+      console.log('✅ No issues found')
       return
     }
 
-    console.log('❌ 发现问题：')
+    console.log('❌ Issues found:')
     console.log('='.repeat(60))
 
-    // 按文件分组
+    // Group issues by file
     const issuesByFile = issues.reduce((acc, issue) => {
       if (!acc[issue.filename]) {
         acc[issue.filename] = []
@@ -26,18 +26,19 @@ export class ConsoleReporter {
       return acc
     }, {} as Record<string, ReportIssue[]>)
 
-    // 输出报告
+    // Output report
     for (const [filename, fileIssues] of Object.entries(issuesByFile)) {
-      console.log(`\n📁 文件: ${filename}`)
+      console.log(`\n📁 File: ${filename}`)
       console.log('-'.repeat(60))
 
       for (const issue of fileIssues) {
-        console.log(`  🚨 [${issue.rule}] ${issue.message}`)
-        console.log(`     位置: 第 ${issue.line} 行, 第 ${issue.column} 列`)
+        const icon = issue.severity === 'high' ? '💥' : issue.severity === 'medium' ? '⚠️' : 'ℹ️'
+        console.log(`  ${icon} [${issue.rule}] ${issue.message}`)
+        console.log(`     Location: Line ${issue.line}, Column ${issue.column}`)
       }
     }
 
     console.log('\n' + '='.repeat(60))
-    console.log(`总计: ${issues.length} 个问题`)
+    console.log(`Total: ${issues.length} issues found`)
   }
 }

@@ -9,8 +9,8 @@ export const noConsoleLogRule: Rule = {
   name: 'no-console-log',
   description: '禁止使用console.log',
   severity: 'low',
-  check(node: Node, filename: string): ReportIssue[] {
-    const issues: ReportIssue[] = []
+  check(node: Node, filename: string): Omit<ReportIssue, 'severity'>[] {
+    const issues: Omit<ReportIssue, 'severity'>[] = []
     if (
       node.type === 'CallExpression' &&
       node.callee.type === 'MemberExpression' &&

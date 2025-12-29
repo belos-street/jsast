@@ -4,4 +4,5 @@ export type ReportIssue = {
   line: number
   column: number
   filename: string
+  severity: 'high' | 'medium' | 'low'
 }

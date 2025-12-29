@@ -2,9 +2,9 @@
 
 import { createCommand } from './cli'
 import { processRules, processFiles } from './parse'
-
 import { RuleManager } from './rules'
 import { StaticAnalyzer } from './core'
+import { ConsoleReporter } from './report'
 
 const bootstrap = async () => {
   //1. 解析命令行参数
@@ -24,7 +24,10 @@ const bootstrap = async () => {
 
   // Flatten results
   const allIssues = results.flat()
-  console.log('发现的问题:', allIssues)
+
+  // Generate report
+  const reporter = new ConsoleReporter()
+  reporter.generateReport(allIssues)
 }
 
 bootstrap()

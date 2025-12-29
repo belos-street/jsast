@@ -1,4 +1,4 @@
-import type { ReportIssue } from './type'
+import type { ReportIssue } from '../type'
 import * as fs from 'fs/promises'
 
 /**

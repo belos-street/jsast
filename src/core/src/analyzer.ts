@@ -2,6 +2,7 @@ import type { Rule } from '@/rules'
 import { parseCode } from './parser'
 import { traverseAndCheck } from './traverser'
 import type { ReportIssue } from '@/report'
+import { file } from 'bun'
 
 /**
  * 静态分析器类
@@ -36,7 +37,7 @@ export class StaticAnalyzer {
    * @returns 检查出的问题列表
    */
   async analyzeFilePath(filePath: string): Promise<ReportIssue[]> {
-    const content = await Bun.file(filePath).text()
+    const content = await file(filePath).text()
     return this.analyzeFile(filePath, content)
   }
 

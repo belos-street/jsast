@@ -9,8 +9,8 @@ export const noCommandInjectionRule: Rule = {
   name: 'no-command-injection',
   description: '检测命令行注入风险',
   severity: 'high',
-  check(node: Node, filename: string): ReportIssue[] {
-    const issues: ReportIssue[] = []
+  check(node: Node, filename: string): Omit<ReportIssue, 'severity'>[] {
+    const issues: Omit<ReportIssue, 'severity'>[] = []
 
     // 检测不安全的child_process函数调用
     if (node.type === 'CallExpression' && node.loc) {

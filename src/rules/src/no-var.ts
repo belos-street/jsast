@@ -9,8 +9,8 @@ export const noVarRule: Rule = {
   name: 'no-var',
   description: '禁止使用var关键字',
   severity: 'medium',
-  check(node: Node, filename: string): ReportIssue[] {
-    const issues: ReportIssue[] = []
+  check(node: Node, filename: string): Omit<ReportIssue, 'severity'>[] {
+    const issues: Omit<ReportIssue, 'severity'>[] = []
     if (node.type === 'VariableDeclaration' && node.kind === 'var' && node.loc) {
       issues.push({
         rule: 'no-var',
