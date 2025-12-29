@@ -1,4 +1,5 @@
 import type { ReportIssue } from '../type'
+import chalk from 'chalk'
 
 /**
  * 控制台报告生成器
@@ -10,12 +11,12 @@ export class ConsoleReporter {
    */
   generateReport(issues: ReportIssue[]): void {
     if (issues.length === 0) {
-      console.log('✅ No issues found')
+      console.log(chalk.green('✅ No issues found'))
       return
     }
 
-    console.log('❌ Issues found:')
-    console.log('='.repeat(60))
+    console.log(chalk.red('❌ Issues found:'))
+    console.log(chalk.gray('='.repeat(60)))
 
     // Group issues by file
     const issuesByFile = issues.reduce((acc, issue) => {
@@ -28,17 +29,19 @@ export class ConsoleReporter {
 
     // Output report
     for (const [filename, fileIssues] of Object.entries(issuesByFile)) {
-      console.log(`\n📁 File: ${filename}`)
-      console.log('-'.repeat(60))
+      console.log(`\n📁 ${chalk.cyan('File:')} ${chalk.underline(filename)}`)
+      console.log(chalk.gray('-'.repeat(60)))
 
       for (const issue of fileIssues) {
         const icon = issue.severity === 'high' ? '💥' : issue.severity === 'medium' ? '⚠️' : 'ℹ️'
-        console.log(`  ${icon} [${issue.rule}] ${issue.message}`)
-        console.log(`     Location: Line ${issue.line}, Column ${issue.column}`)
+        const severityColor = issue.severity === 'high' ? chalk.red : issue.severity === 'medium' ? chalk.yellow : chalk.blue
+        console.log(`  ${severityColor(`${icon} [${issue.rule}] ${issue.message}`)}`)
+        console.log(`     ${chalk.gray('Location:')} ${chalk.underline(`Line ${issue.line}, Column ${issue.column}`)}`)
+        console.log(`     ${chalk.gray('File:')} ${chalk.underline(`${filename}:${issue.line}:${issue.column}`)}`)
       }
     }
 
-    console.log('\n' + '='.repeat(60))
-    console.log(`Total: ${issues.length} issues found`)
+    console.log('\n' + chalk.gray('='.repeat(60)))
+    console.log(chalk.bold(`Total: ${issues.length} issues found`))
   }
 }
