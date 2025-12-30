@@ -1,6 +1,5 @@
 import type { Rule } from '..'
-import type { ReportIssue } from '@/report'
-import type { Node } from '@babel/types'
+import type { RuleIssue } from '../type'
 
 /**
  * 禁止使用console.log规则
@@ -9,8 +8,8 @@ export const noConsoleLogRule: Rule = {
   name: 'no-console-log',
   description: '禁止使用console.log',
   severity: 'low',
-  check(node: Node, filename: string): Omit<ReportIssue, 'severity'>[] {
-    const issues: Omit<ReportIssue, 'severity'>[] = []
+  check(node) {
+    const issues: RuleIssue[] = []
     if (
       node.type === 'CallExpression' &&
       node.callee.type === 'MemberExpression' &&
@@ -21,11 +20,9 @@ export const noConsoleLogRule: Rule = {
       node.loc
     ) {
       issues.push({
-        rule: 'no-console-log',
         message: '禁止使用console.log',
         line: node.loc.start.line,
-        column: node.loc.start.column,
-        filename
+        column: node.loc.start.column
       })
     }
     return issues
