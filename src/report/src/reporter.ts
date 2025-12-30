@@ -36,7 +36,7 @@ export class ConsoleReporter {
         const icon = issue.severity === 'high' ? '💥' : issue.severity === 'medium' ? '⚠️' : 'ℹ️'
         const severityColor = issue.severity === 'high' ? chalk.red : issue.severity === 'medium' ? chalk.yellow : chalk.blue
         console.log(`  ${severityColor(`${icon} [${issue.rule}] ${issue.message}`)}`)
-        console.log(`     ${chalk.gray('Location:')} ${chalk.underline(`Line ${issue.line}, Column ${issue.column}`)}`)
+        console.log(`     ${chalk.gray('Location:')} ${`Line ${issue.line}, Column ${issue.column}`}`)
         console.log(`     ${chalk.gray('File:')} ${chalk.underline(`${filename}:${issue.line}:${issue.column}`)}`)
       }
     }

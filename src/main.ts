@@ -22,12 +22,9 @@ const bootstrap = async () => {
   const analyzer = new StaticAnalyzer(ruleManager.getAllRules())
   const results = await analyzer.analyzeFiles(files)
 
-  // Flatten results
-  const allIssues = results.flat()
-
-  // Generate report
+  //5. 生成报告
   const reporter = new ConsoleReporter()
-  reporter.generateReport(allIssues)
+  reporter.generateReport(results.flat())
 }
 
 bootstrap()
