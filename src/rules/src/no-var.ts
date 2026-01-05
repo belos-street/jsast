@@ -4,7 +4,7 @@ import type { RuleIssue } from '../type'
 /**
  * 禁止使用var关键字规则
  */
-export const noVarRule: Rule = {
+export const varRule: Rule = {
   name: 'no-var',
   description: '禁止使用var关键字',
   severity: 'medium',

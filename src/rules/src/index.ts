@@ -1,5 +1,5 @@
-import { noConsoleLogRule } from './no-console-log'
-import { noVarRule } from './no-var'
-import { noCommandInjectionRule } from './no-command-injection'
+import { noConsoleLogRule } from './console-log'
+import { varRule } from './no-var'
+import { commandInjectionRule } from './command-injection'
 
-export const ruleSet = [noConsoleLogRule, noVarRule, noCommandInjectionRule]
+export const ruleSet = [noConsoleLogRule, varRule, commandInjectionRule]

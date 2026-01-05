@@ -4,8 +4,8 @@ import type { RuleIssue } from '../type'
 /**
  * 命令行注入检测规则
  */
-export const noCommandInjectionRule: Rule = {
-  name: 'no-command-injection',
+export const commandInjectionRule: Rule = {
+  name: 'command-injection',
   description: '检测命令行注入风险',
   severity: 'high',
   check(node) {
