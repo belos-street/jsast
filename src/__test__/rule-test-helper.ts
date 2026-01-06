@@ -1,4 +1,4 @@
-import { RuleManager, type RuleName, type Rule } from '../rules'
+import { RuleManager, type RuleName } from '../rules'
 import { StaticAnalyzer } from '../core'
 
 export class RuleTestHelper {

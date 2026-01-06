@@ -14,14 +14,14 @@ describe('no-console-log rule', () => {
     const code = 'console.log("test")'
     const issues: ReportIssue[] = helper.getAnalyzer().analyzeFile('test.js', code)
     expect(issues.length).toBe(1)
-    expect(issues[0].message).toBe('禁止使用console.log')
-    expect(issues[0].line).toBe(1)
-    expect(issues[0].column).toBe(0)
+    expect(issues[0]!.message).toBe('禁止使用console.log')
+    expect(issues[0]!.line).toBe(1)
+    expect(issues[0]!.column).toBe(0)
   })
 
   it('should detect multiple console.log calls', () => {
     const code = 'console.log("test1"); console.log("test2")'
-    const issues: ReportIssue[] = helper.getAnalyzer().analyzeFile('test.js', code)
+    const issues = helper.getAnalyzer().analyzeFile('test.js', code)
     expect(issues.length).toBe(2)
   })
 
