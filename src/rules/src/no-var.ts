@@ -6,13 +6,14 @@ import type { RuleIssue } from '../type'
  */
 export const varRule: Rule = {
   name: 'no-var',
-  description: '禁止使用var关键字',
+  description: 'Disallows the use of var keyword',
   severity: 'medium',
+  category: 'code-quality',
   check(node) {
     const issues: RuleIssue[] = []
     if (node.type === 'VariableDeclaration' && node.kind === 'var' && node.loc) {
       issues.push({
-        message: '禁止使用var关键字，请使用let或const',
+        message: 'Do not use var keyword, use let or const instead',
         line: node.loc.start.line,
         column: node.loc.start.column
       })

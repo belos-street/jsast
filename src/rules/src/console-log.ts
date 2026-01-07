@@ -6,8 +6,9 @@ import type { RuleIssue } from '../type'
  */
 export const noConsoleLogRule: Rule = {
   name: 'no-console-log',
-  description: '禁止使用console.log',
+  description: 'Disallows the use of console.log',
   severity: 'low',
+  category: 'code-quality',
   check(node) {
     const issues: RuleIssue[] = []
     if (
@@ -20,7 +21,7 @@ export const noConsoleLogRule: Rule = {
       node.loc
     ) {
       issues.push({
-        message: '禁止使用console.log',
+        message: 'Do not use console.log',
         line: node.loc.start.line,
         column: node.loc.start.column
       })

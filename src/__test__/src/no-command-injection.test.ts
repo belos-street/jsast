@@ -14,7 +14,7 @@ describe('no-command-injection rule', () => {
     const code = 'child_process.exec(`ls ${userInput}`)'
     const issues: ReportIssue[] = helper.getAnalyzer().analyzeFile('test.js', code)
     expect(issues.length).toBe(1)
-    expect(issues[0]!.message).toContain('不安全的命令执行')
+    expect(issues[0]!.message).toContain('Unsafe command execution')
     expect(issues[0]!.message).toContain('exec')
   })
 

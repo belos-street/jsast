@@ -14,7 +14,7 @@ describe('no-var rule', () => {
     const code = 'var x = 10'
     const issues: ReportIssue[] = helper.getAnalyzer().analyzeFile('test.js', code)
     expect(issues.length).toBe(1)
-    expect(issues[0]!.message).toBe('禁止使用var关键字，请使用let或const')
+    expect(issues[0]!.message).toBe('Do not use var keyword, use let or const instead')
     expect(issues[0]!.line).toBe(1)
     expect(issues[0]!.column).toBe(0)
   })
@@ -41,6 +41,6 @@ describe('no-var rule', () => {
     const code = 'var x = 10; let y = 20; const z = 30'
     const issues: ReportIssue[] = helper.getAnalyzer().analyzeFile('test.js', code)
     expect(issues.length).toBe(1)
-    expect(issues[0]!.message).toBe('禁止使用var关键字，请使用let或const')
+    expect(issues[0]!.message).toBe('Do not use var keyword, use let or const instead')
   })
 })

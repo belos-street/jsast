@@ -6,18 +6,19 @@ import type { RuleIssue } from '../type'
  */
 export const commandInjectionRule: Rule = {
   name: 'command-injection',
-  description: '检测命令行注入风险',
+  description: 'Detects command injection vulnerabilities',
   severity: 'high',
+  category: 'command-injection',
   check(node) {
     const issues: RuleIssue[] = []
 
-    // 检测不安全的child_process函数调用
+    // Detect unsafe child_process function calls
     if (node.type === 'CallExpression' && node.loc) {
       const callee = node.callee
 
-      // 检查直接调用child_process.exec/execSync/spawnSync等
+      // Check for direct calls to child_process.exec/execSync/spawnSync etc.
       if (callee.type === 'MemberExpression') {
-        // 检测形式：child_process.exec('...')
+        // Detect pattern: child_process.exec('...')
         if (
           callee.object.type === 'Identifier' &&
           callee.object.name === 'child_process' &&
@@ -25,17 +26,17 @@ export const commandInjectionRule: Rule = {
           ['exec', 'execSync', 'execFile', 'execFileSync'].includes(callee.property.name)
         ) {
           const firstArg = node.arguments[0]
-          // 检查第一个参数是否是模板字符串或二元表达式（拼接）
+          // Check if first argument is template string or binary expression (concatenation)
           if (firstArg && (firstArg.type === 'TemplateLiteral' || firstArg.type === 'BinaryExpression')) {
             issues.push({
-              message: `不安全的命令执行：${callee.property.name} 使用了动态拼接的命令字符串，存在命令注入风险`,
+              message: `Unsafe command execution: ${callee.property.name} uses dynamically concatenated command string, vulnerable to command injection`,
               line: node.loc.start.line,
               column: node.loc.start.column
             })
           }
         }
 
-        // 检测形式：require('child_process').exec('...')
+        // Detect pattern: require('child_process').exec('...')
         if (
           callee.object.type === 'CallExpression' &&
           callee.object.callee.type === 'Identifier' &&
@@ -53,7 +54,7 @@ export const commandInjectionRule: Rule = {
             const firstArg = node.arguments[0]
             if (firstArg && (firstArg.type === 'TemplateLiteral' || firstArg.type === 'BinaryExpression')) {
               issues.push({
-                message: `不安全的命令执行：require('child_process').${callee.property.name} 使用了动态拼接的命令字符串，存在命令注入风险`,
+                message: `Unsafe command execution: require('child_process').${callee.property.name} uses dynamically concatenated command string, vulnerable to command injection`,
                 line: node.loc.start.line,
                 column: node.loc.start.column
               })
@@ -62,12 +63,12 @@ export const commandInjectionRule: Rule = {
         }
       }
 
-      // 检测形式：直接调用exec('...')（假设已导入）
+      // Detect pattern: direct call to exec('...') (assuming already imported)
       if (callee.type === 'Identifier' && ['exec', 'execSync'].includes(callee.name)) {
         const firstArg = node.arguments[0]
         if (firstArg && (firstArg.type === 'TemplateLiteral' || firstArg.type === 'BinaryExpression')) {
           issues.push({
-            message: `不安全的命令执行：${callee.name} 使用了动态拼接的命令字符串，存在命令注入风险`,
+            message: `Unsafe command execution: ${callee.name} uses dynamically concatenated command string, vulnerable to command injection`,
             line: node.loc.start.line,
             column: node.loc.start.column
           })
