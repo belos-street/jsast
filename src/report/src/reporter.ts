@@ -33,8 +33,8 @@ export class ConsoleReporter {
       console.log(chalk.gray('-'.repeat(60)))
 
       for (const issue of fileIssues) {
-        const icon = issue.severity === 'high' ? '💥' : issue.severity === 'medium' ? '⚠️' : 'ℹ️'
-        const severityColor = issue.severity === 'high' ? chalk.red : issue.severity === 'medium' ? chalk.yellow : chalk.blue
+        const icon = issue.severity === 'error' ? '💥' : issue.severity === 'warning' ? '⚠️' : 'ℹ️'
+        const severityColor = issue.severity === 'error' ? chalk.red : issue.severity === 'warning' ? chalk.yellow : chalk.blue
         console.log(`  ${severityColor(`${icon} [${issue.rule}] ${issue.message}`)}`)
         console.log(`     ${chalk.gray('Location:')} ${`Line ${issue.line}, Column ${issue.column}`}`)
         console.log(`     ${chalk.gray('File:')} ${chalk.underline(`${filename}:${issue.line}:${issue.column}`)}`)

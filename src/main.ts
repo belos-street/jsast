@@ -4,7 +4,7 @@ import { createCommand } from './cli'
 import { processRules, processFiles } from './parse'
 import { RuleManager } from './rules'
 import { StaticAnalyzer } from './core'
-import { ConsoleReporter } from './report'
+import { ReportManager } from './report'
 
 const bootstrap = async () => {
   //1. 解析命令行参数
@@ -21,10 +21,14 @@ const bootstrap = async () => {
   //4. 分析文件
   const analyzer = new StaticAnalyzer(ruleManager.getAllRules())
   const results = await analyzer.analyzeFiles(files)
+  const flatResults = results.flat()
 
   //5. 生成报告
-  const reporter = new ConsoleReporter()
-  reporter.generateReport(results.flat())
+  const reportManager = new ReportManager()
+  reportManager.generateReports(flatResults, ruleManager.getAllRules(), {
+    console: true,
+    cliArgs: options
+  })
 }
 
 bootstrap()

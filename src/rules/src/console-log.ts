@@ -7,7 +7,7 @@ import type { RuleIssue } from '../type'
 export const noConsoleLogRule: Rule = {
   name: 'no-console-log',
   description: 'Disallows the use of console.log',
-  severity: 'low',
+  severity: 'note',
   category: 'code-quality',
   check(node) {
     const issues: RuleIssue[] = []

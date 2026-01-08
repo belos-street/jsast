@@ -21,7 +21,9 @@ export type RuleIssue = Omit<ReportIssue, 'severity' | 'rule' | 'filename'>
 export type Rule = {
   name: RuleName
   description: string
-  severity: 'high' | 'medium' | 'low'
+  fullDescription?: string
+  helpUri?: string
+  severity: 'error' | 'warning' | 'note'
   category: RuleCategory
   check: (node: Node) => RuleIssue[]
 }

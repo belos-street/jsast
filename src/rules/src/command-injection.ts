@@ -7,7 +7,7 @@ import type { RuleIssue } from '../type'
 export const commandInjectionRule: Rule = {
   name: 'command-injection',
   description: 'Detects command injection vulnerabilities',
-  severity: 'high',
+  severity: 'error',
   category: 'command-injection',
   check(node) {
     const issues: RuleIssue[] = []

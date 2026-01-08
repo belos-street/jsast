@@ -4,7 +4,7 @@ import type { RuleIssue } from '../type'
 export const unsafeSpawnRule: Rule = {
   name: 'no-unsafe-spawn',
   description: 'Detects unsafe spawn function calls',
-  severity: 'high',
+  severity: 'error',
   category: 'command-injection',
   check(node) {
     const issues: RuleIssue[] = []

@@ -1,0 +1,212 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://json.schemastore.org/sarif-2.1.0.json",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "jsast",
+          "version": "1.0.0",
+          "informationUri": "https://github.com/belos-street/jsast",
+          "rules": [
+            {
+              "id": "no-console-log",
+              "name": "no-console-log",
+              "shortDescription": {
+                "text": "Disallows the use of console.log"
+              },
+              "fullDescription": {
+                "text": "Disallows the use of console.log"
+              },
+              "defaultConfiguration": {
+                "level": "note"
+              }
+            },
+            {
+              "id": "command-injection",
+              "name": "command-injection",
+              "shortDescription": {
+                "text": "Detects command injection vulnerabilities"
+              },
+              "fullDescription": {
+                "text": "Detects command injection vulnerabilities"
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "id": "no-var",
+              "name": "no-var",
+              "shortDescription": {
+                "text": "Disallows the use of var keyword"
+              },
+              "fullDescription": {
+                "text": "Disallows the use of var keyword"
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              }
+            }
+          ]
+        }
+      },
+      "results": [
+        {
+          "ruleId": "no-var",
+          "level": "warning",
+          "message": {
+            "text": "Do not use var keyword, use let or const instead"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Volumes/jiangzhi-ssd/code/personal/jsast/test-case/test.js"
+                },
+                "region": {
+                  "startLine": 4,
+                  "startColumn": 0,
+                  "endLine": 4,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "no-console-log",
+          "level": "note",
+          "message": {
+            "text": "Do not use console.log"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Volumes/jiangzhi-ssd/code/personal/jsast/test-case/test.js"
+                },
+                "region": {
+                  "startLine": 6,
+                  "startColumn": 0,
+                  "endLine": 6,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "no-var",
+          "level": "warning",
+          "message": {
+            "text": "Do not use var keyword, use let or const instead"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Volumes/jiangzhi-ssd/code/personal/jsast/test-case/test.js"
+                },
+                "region": {
+                  "startLine": 9,
+                  "startColumn": 2,
+                  "endLine": 9,
+                  "endColumn": 3
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "no-console-log",
+          "level": "note",
+          "message": {
+            "text": "Do not use console.log"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Volumes/jiangzhi-ssd/code/personal/jsast/test-case/test.js"
+                },
+                "region": {
+                  "startLine": 10,
+                  "startColumn": 2,
+                  "endLine": 10,
+                  "endColumn": 3
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "command-injection",
+          "level": "error",
+          "message": {
+            "text": "Unsafe command execution: exec uses dynamically concatenated command string, vulnerable to command injection"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Volumes/jiangzhi-ssd/code/personal/jsast/test-case/test.js"
+                },
+                "region": {
+                  "startLine": 18,
+                  "startColumn": 0,
+                  "endLine": 18,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "command-injection",
+          "level": "error",
+          "message": {
+            "text": "Unsafe command execution: execSync uses dynamically concatenated command string, vulnerable to command injection"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Volumes/jiangzhi-ssd/code/personal/jsast/test-case/test.js"
+                },
+                "region": {
+                  "startLine": 19,
+                  "startColumn": 0,
+                  "endLine": 19,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "command-injection",
+          "level": "error",
+          "message": {
+            "text": "Unsafe command execution: require('child_process').execFile uses dynamically concatenated command string, vulnerable to command injection"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Volumes/jiangzhi-ssd/code/personal/jsast/test-case/test.js"
+                },
+                "region": {
+                  "startLine": 20,
+                  "startColumn": 0,
+                  "endLine": 20,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

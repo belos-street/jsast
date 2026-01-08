@@ -1,4 +1,5 @@
 export { ConsoleReporter } from './src/reporter'
-export { SarifGenerator } from './src/sarif-generator'
+export { SarifReporter } from './src/sarif-reporter'
+export { ReportManager, type ReportOptions } from './report-manager'
 
 export { type ReportIssue } from './type'

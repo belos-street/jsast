@@ -7,7 +7,7 @@ import type { RuleIssue } from '../type'
 export const varRule: Rule = {
   name: 'no-var',
   description: 'Disallows the use of var keyword',
-  severity: 'medium',
+  severity: 'warning',
   category: 'code-quality',
   check(node) {
     const issues: RuleIssue[] = []
