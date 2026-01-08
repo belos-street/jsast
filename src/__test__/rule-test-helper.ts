@@ -5,9 +5,16 @@ export class RuleTestHelper {
   private ruleManager: RuleManager
   private analyzer: StaticAnalyzer
 
-  constructor() {
+  constructor(registerBuiltIn: boolean = false) {
     this.ruleManager = new RuleManager()
-    this.ruleManager.registerBuiltInRules()
+    if (registerBuiltIn) {
+      this.ruleManager.registerBuiltInRules()
+    }
+    this.analyzer = new StaticAnalyzer(this.ruleManager.getAllRules())
+  }
+
+  clearRules(): void {
+    this.ruleManager = new RuleManager()
     this.analyzer = new StaticAnalyzer(this.ruleManager.getAllRules())
   }
 

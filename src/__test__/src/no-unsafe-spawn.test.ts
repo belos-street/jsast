@@ -7,6 +7,7 @@ describe('no-unsafe-spawn rule', () => {
 
   beforeEach(() => {
     helper = new RuleTestHelper()
+    helper.clearRules()
     helper.registerRule('no-unsafe-spawn')
   })
 

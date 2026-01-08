@@ -8,7 +8,7 @@
 
 ### 可扩展规则
 
-- `no-unsafe-shell`: 检测使用shell选项的命令执行
+- `no-unsafe-shell`: 检测使用shell选项的命令执行 ✅
 
 ---
 
