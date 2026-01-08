@@ -4,9 +4,10 @@
 
 ### 已实现规则
 - `no-command-injection`: 检测不安全的child_process函数调用
+- `no-unsafe-spawn`: 检测不安全的spawn调用
 
 ### 可扩展规则
-- `no-unsafe-spawn`: 检测不安全的spawn调用
+
 - `no-unsafe-shell`: 检测使用shell选项的命令执行
 
 ---
