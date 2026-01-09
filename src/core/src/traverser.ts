@@ -1,4 +1,8 @@
-import traverse from '@babel/traverse'
+import type * as TraverseModule from '@babel/traverse'
+// Fix for Bun compile issue with @babel/traverse
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+const traverse: typeof TraverseModule.default = require('@babel/traverse').default
+
 import type { File } from '@babel/types'
 import type { Rule } from '@/rules'
 import type { ReportIssue } from '@/report'
