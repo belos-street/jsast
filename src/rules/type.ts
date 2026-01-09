@@ -24,6 +24,7 @@ export type RuleName =
   | 'detect-sql-injection'
   | 'avoid-raw-sql'
   | 'detect-mongodb-injection'
+  | 'no-eval'
 export type RuleIssue = Omit<ReportIssue, 'severity' | 'rule' | 'filename'>
 
 export type Rule = {
