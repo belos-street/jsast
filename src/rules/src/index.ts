@@ -4,5 +4,6 @@ import { commandInjectionRule } from './command-injection'
 import { unsafeSpawnRule } from './unsafe-spawn'
 import { noUnsafeShellRule } from './no-unsafe-shell'
 import { detectSqlInjectionRule } from './detect-sql-injection'
+import { avoidRawSqlRule } from './avoid-raw-sql'
 
-export const ruleSet = [noConsoleLogRule, varRule, commandInjectionRule, unsafeSpawnRule, noUnsafeShellRule, detectSqlInjectionRule]
+export const ruleSet = [noConsoleLogRule, varRule, commandInjectionRule, unsafeSpawnRule, noUnsafeShellRule, detectSqlInjectionRule, avoidRawSqlRule]

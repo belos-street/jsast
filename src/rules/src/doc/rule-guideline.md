@@ -8,9 +8,10 @@
 4. [测试用例规范](#测试用例规范)
 5. [测试和结果校验](#测试和结果校验)
 6. [示例规则](#示例规则)
-7. [开发流程](#开发流程)
-8. [注意事项](#注意事项)
-9. [参考资源](#参考资源)
+7. [待实现规则](#待实现规则)
+8. [开发流程](#开发流程)
+9. [注意事项](#注意事项)
+10. [参考资源](#参考资源)
 
 ---
 
@@ -84,7 +85,170 @@ export const ruleName: Rule = {
 }
 ```
 
-### 2. 命名规范
+### 2. 文件头部设计思路说明
+
+每个规则文件应在文件开头添加设计思路说明，帮助理解规则的实现逻辑和检测范围：
+
+```typescript
+/**
+ * SQL注入检测规则
+ *
+ * 设计思路：
+ * 1. 检测动态SQL字符串的拼接，包括模板字符串和字符串拼接
+ * 2. 支持多种数据库库：MySQL、PostgreSQL、SQLite、Sequelize、Mongoose
+ * 3. 识别不同的调用模式：直接调用、require模式、类实例化
+ * 4. 忽略安全的参数化查询和静态SQL字符串
+ *
+ * 检测范围：
+ * - 模板字符串中的动态内容：`mysql.query(\`SELECT * FROM users WHERE id = ${userInput}\`)`
+ * - 字符串拼接：`mysql.query('SELECT * FROM users WHERE name = ' + userName)`
+ * - 各种数据库库的使用模式
+ *
+ * 安全模式（不检测）：
+ * - 静态SQL字符串：`mysql.query('SELECT * FROM users')`
+ * - 参数化查询：`mysql.query('SELECT * FROM users WHERE id = ?', [userId])`
+ */
+export const detectSqlInjectionRule: Rule = {
+  // ...
+}
+```
+
+**设计思路说明应包含**：
+1. **检测目标**：明确规则要检测的安全问题
+2. **实现策略**：说明如何进行检测的技术方案
+3. **检测范围**：列出会被检测到的代码模式
+4. **排除范围**：说明哪些情况不会被检测（安全模式）
+5. **支持场景**：列出规则支持的不同使用场景
+
+### 3. 关键代码行注释规范
+
+在规则实现的关键代码处添加注释，说明检测逻辑的意图：
+
+```typescript
+check(node) {
+  const issues: RuleIssue[] = []
+
+  // 只处理函数调用节点，且需要位置信息用于报告
+  if (node.type === 'CallExpression' && node.loc) {
+    const callee = node.callee
+
+    // 定义需要检测的SQL方法名
+    const sqlMethods = ['query', 'execute', 'exec', 'run', 'all', 'where']
+    
+    // 支持的数据库库列表
+    const mysqlLibraries = ['mysql', 'mysql2']
+    const pgLibraries = ['pg']
+    const sqliteLibraries = ['sqlite3']
+
+    // 检查参数是否包含动态内容（模板字符串或字符串拼接）
+    const hasDynamicContent = (arg: Expression): boolean => {
+      // 模板字符串：检查是否有表达式插值
+      if (arg.type === 'TemplateLiteral') {
+        return arg.expressions.length > 0
+      }
+      // 字符串拼接：直接标记为动态
+      if (arg.type === 'BinaryExpression') {
+        return true
+      }
+      return false
+    }
+
+    // 执行SQL注入检测并生成问题报告
+    const checkSqlInjection = (methodName: string, libraryName?: string) => {
+      const firstArg = node.arguments[0] as Expression
+      // 只有当第一个参数包含动态内容时才报告问题
+      if (firstArg && hasDynamicContent(firstArg)) {
+        const libPrefix = libraryName ? `${libraryName}.` : ''
+        issues.push({
+          message: `SQL injection vulnerability: ${libPrefix}${methodName} uses dynamically concatenated SQL string, vulnerable to SQL injection`,
+          line: node.loc!.start.line,
+          column: node.loc!.start.column
+        })
+      }
+    }
+
+    // 处理成员表达式调用：如 mysql.query()
+    if (callee.type === 'MemberExpression') {
+      const property = callee.property
+
+      // 检查是否为SQL方法调用
+      if (property.type === 'Identifier' && sqlMethods.includes(property.name)) {
+        const object = callee.object
+
+        // 处理直接库调用：如 mysql.query()
+        if (object.type === 'Identifier') {
+          const objectName = object.name
+
+          // MySQL库检测
+          if (mysqlLibraries.includes(objectName)) {
+            checkSqlInjection(property.name, objectName)
+          }
+          // PostgreSQL库检测
+          else if (pgLibraries.includes(objectName)) {
+            checkSqlInjection(property.name, objectName)
+          }
+          // SQLite库检测
+          else if (sqliteLibraries.includes(objectName)) {
+            checkSqlInjection(property.name, objectName)
+          }
+          // Sequelize ORM检测
+          else if (objectName === 'sequelize') {
+            checkSqlInjection(property.name, objectName)
+          }
+          // 常见连接对象名检测
+          else if (objectName === 'connection' || objectName === 'pool' || objectName === 'client' || objectName === 'db') {
+            checkSqlInjection(property.name, objectName)
+          }
+          // Mongoose模型检测
+          else if (['User', 'Product', 'Order'].includes(objectName)) {
+            if (property.name === 'where') {
+              checkSqlInjection(property.name, objectName)
+            }
+          }
+        }
+
+        // 处理类实例化调用：如 new pg.Client().query()
+        if (object.type === 'NewExpression' && object.callee.type === 'Identifier') {
+          const className = object.callee.name
+
+          if (className === 'Client' && property.name === 'query') {
+            checkSqlInjection(property.name, 'pg.Client')
+          } else if (className === 'Database' && ['run', 'exec', 'all'].includes(property.name)) {
+            checkSqlInjection(property.name, 'sqlite3.Database')
+          }
+        }
+
+        // 处理require模式：如 require('pg').Client().query()
+        if (object.type === 'CallExpression' && object.callee.type === 'Identifier' && object.callee.name === 'require') {
+          const requireArg = object.arguments[0]
+          if (requireArg && requireArg.type === 'StringLiteral') {
+            const libName = requireArg.value
+
+            if (mysqlLibraries.includes(libName) && property.name === 'query') {
+              checkSqlInjection(property.name, libName)
+            } else if (pgLibraries.includes(libName) && property.name === 'query') {
+              checkSqlInjection(property.name, libName)
+            } else if (sqliteLibraries.includes(libName) && sqlMethods.includes(property.name)) {
+              checkSqlInjection(property.name, libName)
+            }
+          }
+        }
+      }
+    }
+  }
+
+  return issues
+}
+```
+
+**注释规范要点**：
+1. **函数级注释**：说明函数的作用和参数含义
+2. **条件判断注释**：说明为什么需要这个条件判断
+3. **复杂逻辑注释**：解释复杂的检测逻辑
+4. **边界情况注释**：说明特殊情况的处理方式
+5. **性能优化注释**：说明为什么采用某种实现方式
+
+### 4. 命名规范
 
 #### 规则命名前缀分类
 

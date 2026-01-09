@@ -15,12 +15,12 @@
 ## 2. SQL注入 (SQL Injection)
 
 ### 待实现规则
-- `detect-sql-injection`: 检测直接拼接SQL字符串
+- `detect-sql-injection`: 检测直接拼接SQL字符串 ✅
   - 检测: `db.query("SELECT * FROM users WHERE id = " + userInput)`
   - 检测: `db.query(\`SELECT * FROM users WHERE id = ${userInput}\`)`
   - 建议: 使用参数化查询
 
-- `avoid-raw-sql`: 检测使用原始SQL字符串
+- `avoid-raw-sql`: 检测使用原始SQL字符串 ✅
   - 检测: `sequelize.query("SELECT * FROM users")`
   - 建议: 使用ORM提供的查询构建器
 

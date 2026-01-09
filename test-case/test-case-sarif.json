@@ -86,6 +86,19 @@
               "defaultConfiguration": {
                 "level": "error"
               }
+            },
+            {
+              "id": "avoid-raw-sql",
+              "name": "avoid-raw-sql",
+              "shortDescription": {
+                "text": "Avoid using raw SQL strings, use ORM query builders instead"
+              },
+              "fullDescription": {
+                "text": "Avoid using raw SQL strings, use ORM query builders instead"
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              }
             }
           ]
         }
@@ -268,10 +281,54 @@
           ]
         },
         {
+          "ruleId": "avoid-raw-sql",
+          "level": "warning",
+          "message": {
+            "text": "Avoid using raw SQL: mysql.query uses raw SQL string, consider using ORM query builders instead"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-sql-injection.js"
+                },
+                "region": {
+                  "startLine": 4,
+                  "startColumn": 0,
+                  "endLine": 4,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
           "ruleId": "detect-sql-injection",
           "level": "error",
           "message": {
             "text": "SQL injection vulnerability: mysql.query uses dynamically concatenated SQL string, vulnerable to SQL injection"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-sql-injection.js"
+                },
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 0,
+                  "endLine": 8,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "avoid-raw-sql",
+          "level": "warning",
+          "message": {
+            "text": "Avoid using raw SQL: mysql.query uses raw SQL string, consider using ORM query builders instead"
           },
           "locations": [
             {
@@ -356,10 +413,120 @@
           ]
         },
         {
+          "ruleId": "avoid-raw-sql",
+          "level": "warning",
+          "message": {
+            "text": "Avoid using raw SQL: sequelize.query uses raw SQL string, consider using ORM query builders instead"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-sql-injection.js"
+                },
+                "region": {
+                  "startLine": 20,
+                  "startColumn": 0,
+                  "endLine": 20,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "avoid-raw-sql",
+          "level": "warning",
+          "message": {
+            "text": "Avoid using raw SQL: mysql.query uses raw SQL string, consider using ORM query builders instead"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-sql-injection.js"
+                },
+                "region": {
+                  "startLine": 24,
+                  "startColumn": 0,
+                  "endLine": 24,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "avoid-raw-sql",
+          "level": "warning",
+          "message": {
+            "text": "Avoid using raw SQL: mysql.query uses raw SQL string, consider using ORM query builders instead"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-sql-injection.js"
+                },
+                "region": {
+                  "startLine": 28,
+                  "startColumn": 0,
+                  "endLine": 28,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "avoid-raw-sql",
+          "level": "warning",
+          "message": {
+            "text": "Avoid using raw SQL: pg.query uses raw SQL string, consider using ORM query builders instead"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-sql-injection.js"
+                },
+                "region": {
+                  "startLine": 32,
+                  "startColumn": 0,
+                  "endLine": 32,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
           "ruleId": "detect-sql-injection",
           "level": "error",
           "message": {
             "text": "SQL injection vulnerability: mysql.query uses dynamically concatenated SQL string, vulnerable to SQL injection"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-sql-injection.js"
+                },
+                "region": {
+                  "startLine": 36,
+                  "startColumn": 0,
+                  "endLine": 36,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "avoid-raw-sql",
+          "level": "warning",
+          "message": {
+            "text": "Avoid using raw SQL: mysql.query uses raw SQL string, consider using ORM query builders instead"
           },
           "locations": [
             {
@@ -400,10 +567,54 @@
           ]
         },
         {
+          "ruleId": "avoid-raw-sql",
+          "level": "warning",
+          "message": {
+            "text": "Avoid using raw SQL: pg.query uses raw SQL string, consider using ORM query builders instead"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-sql-injection.js"
+                },
+                "region": {
+                  "startLine": 37,
+                  "startColumn": 0,
+                  "endLine": 37,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
           "ruleId": "detect-sql-injection",
           "level": "error",
           "message": {
             "text": "SQL injection vulnerability: mysql.query uses dynamically concatenated SQL string, vulnerable to SQL injection"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-sql-injection.js"
+                },
+                "region": {
+                  "startLine": 41,
+                  "startColumn": 0,
+                  "endLine": 41,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "avoid-raw-sql",
+          "level": "warning",
+          "message": {
+            "text": "Avoid using raw SQL: mysql.query uses raw SQL string, consider using ORM query builders instead"
           },
           "locations": [
             {
@@ -532,6 +743,28 @@
           ]
         },
         {
+          "ruleId": "avoid-raw-sql",
+          "level": "warning",
+          "message": {
+            "text": "Avoid using raw SQL: mysql.query uses raw SQL string, consider using ORM query builders instead"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-sql-injection.js"
+                },
+                "region": {
+                  "startLine": 65,
+                  "startColumn": 0,
+                  "endLine": 65,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
           "ruleId": "no-console-log",
           "level": "note",
           "message": {
@@ -547,6 +780,776 @@
                   "startLine": 69,
                   "startColumn": 0,
                   "endLine": 69,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "avoid-raw-sql",
+          "level": "warning",
+          "message": {
+            "text": "Avoid using raw SQL: sequelize.query uses raw SQL string, consider using ORM query builders instead"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-raw-sql.js"
+                },
+                "region": {
+                  "startLine": 4,
+                  "startColumn": 0,
+                  "endLine": 4,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-sql-injection",
+          "level": "error",
+          "message": {
+            "text": "SQL injection vulnerability: sequelize.query uses dynamically concatenated SQL string, vulnerable to SQL injection"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-raw-sql.js"
+                },
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 0,
+                  "endLine": 8,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "avoid-raw-sql",
+          "level": "warning",
+          "message": {
+            "text": "Avoid using raw SQL: sequelize.query uses raw SQL string, consider using ORM query builders instead"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-raw-sql.js"
+                },
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 0,
+                  "endLine": 8,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-sql-injection",
+          "level": "error",
+          "message": {
+            "text": "SQL injection vulnerability: sequelize.query uses dynamically concatenated SQL string, vulnerable to SQL injection"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-raw-sql.js"
+                },
+                "region": {
+                  "startLine": 12,
+                  "startColumn": 0,
+                  "endLine": 12,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "avoid-raw-sql",
+          "level": "warning",
+          "message": {
+            "text": "Avoid using raw SQL: sequelize.query uses raw SQL string, consider using ORM query builders instead"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-raw-sql.js"
+                },
+                "region": {
+                  "startLine": 12,
+                  "startColumn": 0,
+                  "endLine": 12,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "avoid-raw-sql",
+          "level": "warning",
+          "message": {
+            "text": "Avoid using raw SQL: sequelize.query uses raw SQL string, consider using ORM query builders instead"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-raw-sql.js"
+                },
+                "region": {
+                  "startLine": 16,
+                  "startColumn": 0,
+                  "endLine": 16,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "avoid-raw-sql",
+          "level": "warning",
+          "message": {
+            "text": "Avoid using raw SQL: sequelize.query uses raw SQL string, consider using ORM query builders instead"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-raw-sql.js"
+                },
+                "region": {
+                  "startLine": 20,
+                  "startColumn": 0,
+                  "endLine": 20,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "avoid-raw-sql",
+          "level": "warning",
+          "message": {
+            "text": "Avoid using raw SQL: sequelize.query uses raw SQL string, consider using ORM query builders instead"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-raw-sql.js"
+                },
+                "region": {
+                  "startLine": 24,
+                  "startColumn": 0,
+                  "endLine": 24,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "avoid-raw-sql",
+          "level": "warning",
+          "message": {
+            "text": "Avoid using raw SQL: sequelize.query uses raw SQL string, consider using ORM query builders instead"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-raw-sql.js"
+                },
+                "region": {
+                  "startLine": 28,
+                  "startColumn": 0,
+                  "endLine": 28,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "avoid-raw-sql",
+          "level": "warning",
+          "message": {
+            "text": "Avoid using raw SQL: sequelize.query uses raw SQL string, consider using ORM query builders instead"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-raw-sql.js"
+                },
+                "region": {
+                  "startLine": 32,
+                  "startColumn": 0,
+                  "endLine": 32,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "avoid-raw-sql",
+          "level": "warning",
+          "message": {
+            "text": "Avoid using raw SQL: sequelize.query uses raw SQL string, consider using ORM query builders instead"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-raw-sql.js"
+                },
+                "region": {
+                  "startLine": 36,
+                  "startColumn": 0,
+                  "endLine": 36,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "avoid-raw-sql",
+          "level": "warning",
+          "message": {
+            "text": "Avoid using raw SQL: connection.query uses raw SQL string, consider using ORM query builders instead"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-raw-sql.js"
+                },
+                "region": {
+                  "startLine": 40,
+                  "startColumn": 0,
+                  "endLine": 40,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-sql-injection",
+          "level": "error",
+          "message": {
+            "text": "SQL injection vulnerability: connection.query uses dynamically concatenated SQL string, vulnerable to SQL injection"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-raw-sql.js"
+                },
+                "region": {
+                  "startLine": 44,
+                  "startColumn": 0,
+                  "endLine": 44,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "avoid-raw-sql",
+          "level": "warning",
+          "message": {
+            "text": "Avoid using raw SQL: connection.query uses raw SQL string, consider using ORM query builders instead"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-raw-sql.js"
+                },
+                "region": {
+                  "startLine": 44,
+                  "startColumn": 0,
+                  "endLine": 44,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "avoid-raw-sql",
+          "level": "warning",
+          "message": {
+            "text": "Avoid using raw SQL: connection.query uses raw SQL string, consider using ORM query builders instead"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-raw-sql.js"
+                },
+                "region": {
+                  "startLine": 48,
+                  "startColumn": 0,
+                  "endLine": 48,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "avoid-raw-sql",
+          "level": "warning",
+          "message": {
+            "text": "Avoid using raw SQL: knex.raw uses raw SQL string, consider using ORM query builders instead"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-raw-sql.js"
+                },
+                "region": {
+                  "startLine": 52,
+                  "startColumn": 0,
+                  "endLine": 52,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "avoid-raw-sql",
+          "level": "warning",
+          "message": {
+            "text": "Avoid using raw SQL: knex.raw uses raw SQL string, consider using ORM query builders instead"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-raw-sql.js"
+                },
+                "region": {
+                  "startLine": 56,
+                  "startColumn": 0,
+                  "endLine": 56,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "avoid-raw-sql",
+          "level": "warning",
+          "message": {
+            "text": "Avoid using raw SQL: knex.raw uses raw SQL string, consider using ORM query builders instead"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-raw-sql.js"
+                },
+                "region": {
+                  "startLine": 60,
+                  "startColumn": 0,
+                  "endLine": 60,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "avoid-raw-sql",
+          "level": "warning",
+          "message": {
+            "text": "Avoid using raw SQL: knex.raw uses raw SQL string, consider using ORM query builders instead"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-raw-sql.js"
+                },
+                "region": {
+                  "startLine": 64,
+                  "startColumn": 0,
+                  "endLine": 64,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "avoid-raw-sql",
+          "level": "warning",
+          "message": {
+            "text": "Avoid using raw SQL: prisma.$queryRaw uses raw SQL string, consider using ORM query builders instead"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-raw-sql.js"
+                },
+                "region": {
+                  "startLine": 68,
+                  "startColumn": 0,
+                  "endLine": 68,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "avoid-raw-sql",
+          "level": "warning",
+          "message": {
+            "text": "Avoid using raw SQL: prisma.$queryRaw uses raw SQL string, consider using ORM query builders instead"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-raw-sql.js"
+                },
+                "region": {
+                  "startLine": 72,
+                  "startColumn": 0,
+                  "endLine": 72,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "avoid-raw-sql",
+          "level": "warning",
+          "message": {
+            "text": "Avoid using raw SQL: prisma.$executeRaw uses raw SQL string, consider using ORM query builders instead"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-raw-sql.js"
+                },
+                "region": {
+                  "startLine": 76,
+                  "startColumn": 0,
+                  "endLine": 76,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "avoid-raw-sql",
+          "level": "warning",
+          "message": {
+            "text": "Avoid using raw SQL: mysql.query uses raw SQL string, consider using ORM query builders instead"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-raw-sql.js"
+                },
+                "region": {
+                  "startLine": 80,
+                  "startColumn": 0,
+                  "endLine": 80,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "avoid-raw-sql",
+          "level": "warning",
+          "message": {
+            "text": "Avoid using raw SQL: pg.query uses raw SQL string, consider using ORM query builders instead"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-raw-sql.js"
+                },
+                "region": {
+                  "startLine": 84,
+                  "startColumn": 0,
+                  "endLine": 84,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "avoid-raw-sql",
+          "level": "warning",
+          "message": {
+            "text": "Avoid using raw SQL: sqlite3.run uses raw SQL string, consider using ORM query builders instead"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-raw-sql.js"
+                },
+                "region": {
+                  "startLine": 88,
+                  "startColumn": 0,
+                  "endLine": 88,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "avoid-raw-sql",
+          "level": "warning",
+          "message": {
+            "text": "Avoid using raw SQL: sequelize.query uses raw SQL string, consider using ORM query builders instead"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-raw-sql.js"
+                },
+                "region": {
+                  "startLine": 164,
+                  "startColumn": 0,
+                  "endLine": 164,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "avoid-raw-sql",
+          "level": "warning",
+          "message": {
+            "text": "Avoid using raw SQL: knex.raw uses raw SQL string, consider using ORM query builders instead"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-raw-sql.js"
+                },
+                "region": {
+                  "startLine": 168,
+                  "startColumn": 0,
+                  "endLine": 168,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "avoid-raw-sql",
+          "level": "warning",
+          "message": {
+            "text": "Avoid using raw SQL: mysql.query uses raw SQL string, consider using ORM query builders instead"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-raw-sql.js"
+                },
+                "region": {
+                  "startLine": 172,
+                  "startColumn": 0,
+                  "endLine": 172,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "avoid-raw-sql",
+          "level": "warning",
+          "message": {
+            "text": "Avoid using raw SQL: pg.query uses raw SQL string, consider using ORM query builders instead"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-raw-sql.js"
+                },
+                "region": {
+                  "startLine": 176,
+                  "startColumn": 0,
+                  "endLine": 176,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "avoid-raw-sql",
+          "level": "warning",
+          "message": {
+            "text": "Avoid using raw SQL: sqlite3.run uses raw SQL string, consider using ORM query builders instead"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-raw-sql.js"
+                },
+                "region": {
+                  "startLine": 180,
+                  "startColumn": 0,
+                  "endLine": 180,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "avoid-raw-sql",
+          "level": "warning",
+          "message": {
+            "text": "Avoid using raw SQL: sequelize.query uses raw SQL string, consider using ORM query builders instead"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-raw-sql.js"
+                },
+                "region": {
+                  "startLine": 184,
+                  "startColumn": 0,
+                  "endLine": 184,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "avoid-raw-sql",
+          "level": "warning",
+          "message": {
+            "text": "Avoid using raw SQL: sequelize.query uses raw SQL string, consider using ORM query builders instead"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-raw-sql.js"
+                },
+                "region": {
+                  "startLine": 185,
+                  "startColumn": 0,
+                  "endLine": 185,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "avoid-raw-sql",
+          "level": "warning",
+          "message": {
+            "text": "Avoid using raw SQL: sequelize.query uses raw SQL string, consider using ORM query builders instead"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-raw-sql.js"
+                },
+                "region": {
+                  "startLine": 189,
+                  "startColumn": 0,
+                  "endLine": 189,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "avoid-raw-sql",
+          "level": "warning",
+          "message": {
+            "text": "Avoid using raw SQL: knex.raw uses raw SQL string, consider using ORM query builders instead"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-raw-sql.js"
+                },
+                "region": {
+                  "startLine": 190,
+                  "startColumn": 0,
+                  "endLine": 190,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "no-console-log",
+          "level": "note",
+          "message": {
+            "text": "Do not use console.log"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-raw-sql.js"
+                },
+                "region": {
+                  "startLine": 202,
+                  "startColumn": 0,
+                  "endLine": 202,
                   "endColumn": 1
                 }
               }

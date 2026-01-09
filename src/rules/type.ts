@@ -15,7 +15,14 @@ export type RuleCategory =
   | 'code-quality'
   | 'other-security'
 
-export type RuleName = 'no-console-log' | 'no-var' | 'command-injection' | 'no-unsafe-spawn' | 'no-unsafe-shell' | 'detect-sql-injection'
+export type RuleName =
+  | 'no-console-log'
+  | 'no-var'
+  | 'command-injection'
+  | 'no-unsafe-spawn'
+  | 'no-unsafe-shell'
+  | 'detect-sql-injection'
+  | 'avoid-raw-sql'
 export type RuleIssue = Omit<ReportIssue, 'severity' | 'rule' | 'filename'>
 
 export type Rule = {
