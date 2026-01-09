@@ -5,5 +5,15 @@ import { unsafeSpawnRule } from './unsafe-spawn'
 import { noUnsafeShellRule } from './no-unsafe-shell'
 import { detectSqlInjectionRule } from './detect-sql-injection'
 import { avoidRawSqlRule } from './avoid-raw-sql'
+import { detectMongoDbInjectionRule } from './detect-mongodb-injection'
 
-export const ruleSet = [noConsoleLogRule, varRule, commandInjectionRule, unsafeSpawnRule, noUnsafeShellRule, detectSqlInjectionRule, avoidRawSqlRule]
+export const ruleSet = [
+  noConsoleLogRule,
+  varRule,
+  commandInjectionRule,
+  unsafeSpawnRule,
+  noUnsafeShellRule,
+  detectSqlInjectionRule,
+  avoidRawSqlRule,
+  detectMongoDbInjectionRule
+]

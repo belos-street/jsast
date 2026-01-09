@@ -99,6 +99,19 @@
               "defaultConfiguration": {
                 "level": "warning"
               }
+            },
+            {
+              "id": "detect-mongodb-injection",
+              "name": "detect-mongodb-injection",
+              "shortDescription": {
+                "text": "Detects MongoDB injection vulnerabilities"
+              },
+              "fullDescription": {
+                "text": "Detects MongoDB injection vulnerabilities"
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
             }
           ]
         }
@@ -787,6 +800,666 @@
           ]
         },
         {
+          "ruleId": "detect-mongodb-injection",
+          "level": "error",
+          "message": {
+            "text": "MongoDB injection vulnerability: db.collection.find uses $where operator with dynamic content, vulnerable to MongoDB injection"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-mongodb-injection.js"
+                },
+                "region": {
+                  "startLine": 5,
+                  "startColumn": 0,
+                  "endLine": 5,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-mongodb-injection",
+          "level": "error",
+          "message": {
+            "text": "MongoDB injection vulnerability: db.collection.find uses $where operator with dynamic content, vulnerable to MongoDB injection"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-mongodb-injection.js"
+                },
+                "region": {
+                  "startLine": 9,
+                  "startColumn": 0,
+                  "endLine": 9,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-mongodb-injection",
+          "level": "error",
+          "message": {
+            "text": "MongoDB injection vulnerability: db.collection.findOne uses $where operator with dynamic content, vulnerable to MongoDB injection"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-mongodb-injection.js"
+                },
+                "region": {
+                  "startLine": 13,
+                  "startColumn": 0,
+                  "endLine": 13,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-mongodb-injection",
+          "level": "error",
+          "message": {
+            "text": "MongoDB injection vulnerability: db.collection.update uses $where operator with dynamic content, vulnerable to MongoDB injection"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-mongodb-injection.js"
+                },
+                "region": {
+                  "startLine": 17,
+                  "startColumn": 0,
+                  "endLine": 17,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-mongodb-injection",
+          "level": "error",
+          "message": {
+            "text": "MongoDB injection vulnerability: db.collection.deleteMany uses $where operator with dynamic content, vulnerable to MongoDB injection"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-mongodb-injection.js"
+                },
+                "region": {
+                  "startLine": 21,
+                  "startColumn": 0,
+                  "endLine": 21,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-mongodb-injection",
+          "level": "error",
+          "message": {
+            "text": "MongoDB injection vulnerability: db.collection.find uses direct user input without MongoDB operators, consider using $eq operator"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-mongodb-injection.js"
+                },
+                "region": {
+                  "startLine": 25,
+                  "startColumn": 0,
+                  "endLine": 25,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-mongodb-injection",
+          "level": "error",
+          "message": {
+            "text": "MongoDB injection vulnerability: db.collection.findOne uses direct user input without MongoDB operators, consider using $eq operator"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-mongodb-injection.js"
+                },
+                "region": {
+                  "startLine": 29,
+                  "startColumn": 0,
+                  "endLine": 29,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-mongodb-injection",
+          "level": "error",
+          "message": {
+            "text": "MongoDB injection vulnerability: db.collection.update uses direct user input without MongoDB operators, consider using $eq operator"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-mongodb-injection.js"
+                },
+                "region": {
+                  "startLine": 33,
+                  "startColumn": 0,
+                  "endLine": 33,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-mongodb-injection",
+          "level": "error",
+          "message": {
+            "text": "MongoDB injection vulnerability: db.collection.deleteOne uses direct user input without MongoDB operators, consider using $eq operator"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-mongodb-injection.js"
+                },
+                "region": {
+                  "startLine": 37,
+                  "startColumn": 0,
+                  "endLine": 37,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-mongodb-injection",
+          "level": "error",
+          "message": {
+            "text": "MongoDB injection vulnerability: db.collection.find uses direct user input without MongoDB operators, consider using $eq operator"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-mongodb-injection.js"
+                },
+                "region": {
+                  "startLine": 41,
+                  "startColumn": 0,
+                  "endLine": 41,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-mongodb-injection",
+          "level": "error",
+          "message": {
+            "text": "MongoDB injection vulnerability: db.collection.find uses direct user input without MongoDB operators, consider using $eq operator"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-mongodb-injection.js"
+                },
+                "region": {
+                  "startLine": 41,
+                  "startColumn": 0,
+                  "endLine": 41,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-mongodb-injection",
+          "level": "error",
+          "message": {
+            "text": "MongoDB injection vulnerability: User.find uses $where operator with dynamic content, vulnerable to MongoDB injection"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-mongodb-injection.js"
+                },
+                "region": {
+                  "startLine": 45,
+                  "startColumn": 0,
+                  "endLine": 45,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-mongodb-injection",
+          "level": "error",
+          "message": {
+            "text": "MongoDB injection vulnerability: Product.find uses direct user input without MongoDB operators, consider using $eq operator"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-mongodb-injection.js"
+                },
+                "region": {
+                  "startLine": 49,
+                  "startColumn": 0,
+                  "endLine": 49,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-mongodb-injection",
+          "level": "error",
+          "message": {
+            "text": "MongoDB injection vulnerability: Order.findOne uses direct user input without MongoDB operators, consider using $eq operator"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-mongodb-injection.js"
+                },
+                "region": {
+                  "startLine": 53,
+                  "startColumn": 0,
+                  "endLine": 53,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-mongodb-injection",
+          "level": "error",
+          "message": {
+            "text": "MongoDB injection vulnerability: User.update uses direct user input without MongoDB operators, consider using $eq operator"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-mongodb-injection.js"
+                },
+                "region": {
+                  "startLine": 57,
+                  "startColumn": 0,
+                  "endLine": 57,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-mongodb-injection",
+          "level": "error",
+          "message": {
+            "text": "MongoDB injection vulnerability: db.collection.find uses direct user input without MongoDB operators, consider using $eq operator"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-mongodb-injection.js"
+                },
+                "region": {
+                  "startLine": 105,
+                  "startColumn": 0,
+                  "endLine": 105,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-mongodb-injection",
+          "level": "error",
+          "message": {
+            "text": "MongoDB injection vulnerability: db.collection.find uses direct user input without MongoDB operators, consider using $eq operator"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-mongodb-injection.js"
+                },
+                "region": {
+                  "startLine": 113,
+                  "startColumn": 0,
+                  "endLine": 113,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-mongodb-injection",
+          "level": "error",
+          "message": {
+            "text": "MongoDB injection vulnerability: db.collection.find uses direct user input without MongoDB operators, consider using $eq operator"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-mongodb-injection.js"
+                },
+                "region": {
+                  "startLine": 113,
+                  "startColumn": 0,
+                  "endLine": 113,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-mongodb-injection",
+          "level": "error",
+          "message": {
+            "text": "MongoDB injection vulnerability: db.collection.find uses direct user input without MongoDB operators, consider using $eq operator"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-mongodb-injection.js"
+                },
+                "region": {
+                  "startLine": 117,
+                  "startColumn": 0,
+                  "endLine": 117,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-mongodb-injection",
+          "level": "error",
+          "message": {
+            "text": "MongoDB injection vulnerability: db.collection.find uses direct user input without MongoDB operators, consider using $eq operator"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-mongodb-injection.js"
+                },
+                "region": {
+                  "startLine": 117,
+                  "startColumn": 0,
+                  "endLine": 117,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "no-console-log",
+          "level": "note",
+          "message": {
+            "text": "Do not use console.log"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-mongodb-injection.js"
+                },
+                "region": {
+                  "startLine": 121,
+                  "startColumn": 0,
+                  "endLine": 121,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-mongodb-injection",
+          "level": "error",
+          "message": {
+            "text": "MongoDB injection vulnerability: db.collection.find uses $where operator with dynamic content, vulnerable to MongoDB injection"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-mongodb-injection.js"
+                },
+                "region": {
+                  "startLine": 129,
+                  "startColumn": 0,
+                  "endLine": 129,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-mongodb-injection",
+          "level": "error",
+          "message": {
+            "text": "MongoDB injection vulnerability: db.collection.findOne uses $where operator with dynamic content, vulnerable to MongoDB injection"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-mongodb-injection.js"
+                },
+                "region": {
+                  "startLine": 130,
+                  "startColumn": 0,
+                  "endLine": 130,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-mongodb-injection",
+          "level": "error",
+          "message": {
+            "text": "MongoDB injection vulnerability: db.collection.find uses $where operator with dynamic content, vulnerable to MongoDB injection"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-mongodb-injection.js"
+                },
+                "region": {
+                  "startLine": 134,
+                  "startColumn": 0,
+                  "endLine": 134,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-mongodb-injection",
+          "level": "error",
+          "message": {
+            "text": "MongoDB injection vulnerability: db.collection.find uses direct user input without MongoDB operators, consider using $eq operator"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-mongodb-injection.js"
+                },
+                "region": {
+                  "startLine": 135,
+                  "startColumn": 0,
+                  "endLine": 135,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-mongodb-injection",
+          "level": "error",
+          "message": {
+            "text": "MongoDB injection vulnerability: Product.find uses direct user input without MongoDB operators, consider using $eq operator"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-mongodb-injection.js"
+                },
+                "region": {
+                  "startLine": 139,
+                  "startColumn": 0,
+                  "endLine": 139,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-mongodb-injection",
+          "level": "error",
+          "message": {
+            "text": "MongoDB injection vulnerability: Order.find uses direct user input without MongoDB operators, consider using $eq operator"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-mongodb-injection.js"
+                },
+                "region": {
+                  "startLine": 143,
+                  "startColumn": 0,
+                  "endLine": 143,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-mongodb-injection",
+          "level": "error",
+          "message": {
+            "text": "MongoDB injection vulnerability: Account.find uses direct user input without MongoDB operators, consider using $eq operator"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-mongodb-injection.js"
+                },
+                "region": {
+                  "startLine": 147,
+                  "startColumn": 0,
+                  "endLine": 147,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-mongodb-injection",
+          "level": "error",
+          "message": {
+            "text": "MongoDB injection vulnerability: Session.find uses direct user input without MongoDB operators, consider using $eq operator"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-mongodb-injection.js"
+                },
+                "region": {
+                  "startLine": 151,
+                  "startColumn": 0,
+                  "endLine": 151,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-mongodb-injection",
+          "level": "error",
+          "message": {
+            "text": "MongoDB injection vulnerability: Document.find uses direct user input without MongoDB operators, consider using $eq operator"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-mongodb-injection.js"
+                },
+                "region": {
+                  "startLine": 155,
+                  "startColumn": 0,
+                  "endLine": 155,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
           "ruleId": "avoid-raw-sql",
           "level": "warning",
           "message": {
@@ -1330,6 +2003,28 @@
                   "startLine": 88,
                   "startColumn": 0,
                   "endLine": 88,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-mongodb-injection",
+          "level": "error",
+          "message": {
+            "text": "MongoDB injection vulnerability: User.findOne uses direct user input without MongoDB operators, consider using $eq operator"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-raw-sql.js"
+                },
+                "region": {
+                  "startLine": 96,
+                  "startColumn": 0,
+                  "endLine": 96,
                   "endColumn": 1
                 }
               }

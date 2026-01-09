@@ -24,7 +24,7 @@
   - 检测: `sequelize.query("SELECT * FROM users")`
   - 建议: 使用ORM提供的查询构建器
 
-- `detect-mongodb-injection`: 检测MongoDB注入风险
+- `detect-mongodb-injection`: 检测MongoDB注入风险 ✅
   - 检测: `db.collection.find({ $where: "this.name == '" + userInput + "'" })`
   - 检测: `db.collection.find({ name: userInput })` (未使用$eq等操作符)
 

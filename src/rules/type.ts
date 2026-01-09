@@ -23,6 +23,7 @@ export type RuleName =
   | 'no-unsafe-shell'
   | 'detect-sql-injection'
   | 'avoid-raw-sql'
+  | 'detect-mongodb-injection'
 export type RuleIssue = Omit<ReportIssue, 'severity' | 'rule' | 'filename'>
 
 export type Rule = {
