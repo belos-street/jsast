@@ -38,7 +38,7 @@
   - 检测: `document.getElementById('app').innerHTML = data`
   - 建议: 使用textContent或DOMPurify
 
-- `avoid-unsafe-html`: 检测不安全的HTML生成
+- `avoid-unsafe-html`: 检测不安全的HTML生成 ✅
   - 检测: `res.send('<div>' + userInput + '</div>')`
   - 检测: `return <div>{userInput}</div>` (React中未转义)
 
