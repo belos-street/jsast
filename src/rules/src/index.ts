@@ -10,6 +10,8 @@ import { avoidDangerouslySetInnerHtmlRule } from './avoid-dangerously-set-innerh
 import { avoidUnsafeHtmlRule } from './avoid-unsafe-html'
 import { noEvalRule } from './no-eval'
 import { noDocumentWriteRule } from './no-document-write'
+import { detectPathTraversalRule } from './detect-path-traversal'
+import { avoidUnsafeFsAccessRule } from './avoid-unsafe-fs-access'
 
 export const ruleSet = [
   noConsoleLogRule,
@@ -23,5 +25,7 @@ export const ruleSet = [
   avoidDangerouslySetInnerHtmlRule,
   avoidUnsafeHtmlRule,
   noEvalRule,
-  noDocumentWriteRule
+  noDocumentWriteRule,
+  detectPathTraversalRule,
+  avoidUnsafeFsAccessRule
 ]

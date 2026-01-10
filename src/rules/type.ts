@@ -28,6 +28,8 @@ export type RuleName =
   | 'avoid-unsafe-html'
   | 'no-eval'
   | 'no-document-write'
+  | 'detect-path-traversal'
+  | 'avoid-unsafe-fs-access'
 export type RuleIssue = Omit<ReportIssue, 'severity' | 'rule' | 'filename'>
 
 export type Rule = {

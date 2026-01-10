@@ -57,12 +57,12 @@
 ## 4. 路径遍历 (Path Traversal)
 
 ### 待实现规则
-- `detect-path-traversal`: 检测路径遍历风险
+- `detect-path-traversal`: 检测路径遍历风险 ✅
   - 检测: `fs.readFile('../' + userInput)`
   - 检测: `fs.readFileSync(\`./${userInput}\`)`
   - 建议: 使用path.join()并验证路径
 
-- `avoid-unsafe-fs-access`: 检测不安全的文件系统访问
+- `avoid-unsafe-fs-access`: 检测不安全的文件系统访问 ✅
   - 检测: `fs.accessSync(userInput)`
   - 检测: `fs.existsSync(userInput)`
   - 建议: 验证和规范化路径

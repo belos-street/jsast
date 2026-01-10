@@ -138,6 +138,19 @@
               "defaultConfiguration": {
                 "level": "error"
               }
+            },
+            {
+              "id": "avoid-unsafe-fs-access",
+              "name": "avoid-unsafe-fs-access",
+              "shortDescription": {
+                "text": "Avoid unsafe file system access with dynamically concatenated paths"
+              },
+              "fullDescription": {
+                "text": "Avoid unsafe file system access with dynamically concatenated paths"
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              }
             }
           ]
         }
@@ -848,10 +861,54 @@
           ]
         },
         {
+          "ruleId": "avoid-unsafe-fs-access",
+          "level": "warning",
+          "message": {
+            "text": "Unsafe file system access: fs.readFile uses dynamically concatenated path, vulnerable to path traversal"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-path-traversal.js"
+                },
+                "region": {
+                  "startLine": 5,
+                  "startColumn": 0,
+                  "endLine": 5,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
           "ruleId": "detect-path-traversal",
           "level": "error",
           "message": {
             "text": "Path traversal vulnerability: fs.readFileSync uses dynamically concatenated path, vulnerable to path traversal"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-path-traversal.js"
+                },
+                "region": {
+                  "startLine": 9,
+                  "startColumn": 0,
+                  "endLine": 9,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "avoid-unsafe-fs-access",
+          "level": "warning",
+          "message": {
+            "text": "Unsafe file system access: fs.readFileSync uses dynamically concatenated path, vulnerable to path traversal"
           },
           "locations": [
             {
@@ -892,10 +949,54 @@
           ]
         },
         {
+          "ruleId": "avoid-unsafe-fs-access",
+          "level": "warning",
+          "message": {
+            "text": "Unsafe file system access: fs.writeFile uses dynamically concatenated path, vulnerable to path traversal"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-path-traversal.js"
+                },
+                "region": {
+                  "startLine": 13,
+                  "startColumn": 0,
+                  "endLine": 13,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
           "ruleId": "detect-path-traversal",
           "level": "error",
           "message": {
             "text": "Path traversal vulnerability: fs.writeFileSync uses dynamically concatenated path, vulnerable to path traversal"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-path-traversal.js"
+                },
+                "region": {
+                  "startLine": 17,
+                  "startColumn": 0,
+                  "endLine": 17,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "avoid-unsafe-fs-access",
+          "level": "warning",
+          "message": {
+            "text": "Unsafe file system access: fs.writeFileSync uses dynamically concatenated path, vulnerable to path traversal"
           },
           "locations": [
             {
@@ -936,10 +1037,54 @@
           ]
         },
         {
+          "ruleId": "avoid-unsafe-fs-access",
+          "level": "warning",
+          "message": {
+            "text": "Unsafe file system access: fs.unlink uses dynamically concatenated path, vulnerable to path traversal"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-path-traversal.js"
+                },
+                "region": {
+                  "startLine": 21,
+                  "startColumn": 0,
+                  "endLine": 21,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
           "ruleId": "detect-path-traversal",
           "level": "error",
           "message": {
             "text": "Path traversal vulnerability: fs.unlinkSync uses dynamically concatenated path, vulnerable to path traversal"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-path-traversal.js"
+                },
+                "region": {
+                  "startLine": 25,
+                  "startColumn": 0,
+                  "endLine": 25,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "avoid-unsafe-fs-access",
+          "level": "warning",
+          "message": {
+            "text": "Unsafe file system access: fs.unlinkSync uses dynamically concatenated path, vulnerable to path traversal"
           },
           "locations": [
             {
@@ -980,10 +1125,54 @@
           ]
         },
         {
+          "ruleId": "avoid-unsafe-fs-access",
+          "level": "warning",
+          "message": {
+            "text": "Unsafe file system access: fs.existsSync uses dynamically concatenated path, vulnerable to path traversal"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-path-traversal.js"
+                },
+                "region": {
+                  "startLine": 29,
+                  "startColumn": 0,
+                  "endLine": 29,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
           "ruleId": "detect-path-traversal",
           "level": "error",
           "message": {
             "text": "Path traversal vulnerability: fs.stat uses dynamically concatenated path, vulnerable to path traversal"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-path-traversal.js"
+                },
+                "region": {
+                  "startLine": 33,
+                  "startColumn": 0,
+                  "endLine": 33,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "avoid-unsafe-fs-access",
+          "level": "warning",
+          "message": {
+            "text": "Unsafe file system access: fs.stat uses dynamically concatenated path, vulnerable to path traversal"
           },
           "locations": [
             {
@@ -1024,10 +1213,54 @@
           ]
         },
         {
+          "ruleId": "avoid-unsafe-fs-access",
+          "level": "warning",
+          "message": {
+            "text": "Unsafe file system access: fs.readdir uses dynamically concatenated path, vulnerable to path traversal"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-path-traversal.js"
+                },
+                "region": {
+                  "startLine": 37,
+                  "startColumn": 0,
+                  "endLine": 37,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
           "ruleId": "detect-path-traversal",
           "level": "error",
           "message": {
             "text": "Path traversal vulnerability: fs.mkdir uses dynamically concatenated path, vulnerable to path traversal"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-path-traversal.js"
+                },
+                "region": {
+                  "startLine": 41,
+                  "startColumn": 0,
+                  "endLine": 41,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "avoid-unsafe-fs-access",
+          "level": "warning",
+          "message": {
+            "text": "Unsafe file system access: fs.mkdir uses dynamically concatenated path, vulnerable to path traversal"
           },
           "locations": [
             {
@@ -1068,10 +1301,54 @@
           ]
         },
         {
+          "ruleId": "avoid-unsafe-fs-access",
+          "level": "warning",
+          "message": {
+            "text": "Unsafe file system access: fs.rmdir uses dynamically concatenated path, vulnerable to path traversal"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-path-traversal.js"
+                },
+                "region": {
+                  "startLine": 45,
+                  "startColumn": 0,
+                  "endLine": 45,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
           "ruleId": "detect-path-traversal",
           "level": "error",
           "message": {
             "text": "Path traversal vulnerability: require('fs').readFile uses dynamically concatenated path, vulnerable to path traversal"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-path-traversal.js"
+                },
+                "region": {
+                  "startLine": 49,
+                  "startColumn": 0,
+                  "endLine": 49,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "avoid-unsafe-fs-access",
+          "level": "warning",
+          "message": {
+            "text": "Unsafe file system access: require('fs').readFile uses dynamically concatenated path, vulnerable to path traversal"
           },
           "locations": [
             {
@@ -1112,10 +1389,54 @@
           ]
         },
         {
+          "ruleId": "avoid-unsafe-fs-access",
+          "level": "warning",
+          "message": {
+            "text": "Unsafe file system access: readFile uses dynamically concatenated path, vulnerable to path traversal"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-path-traversal.js"
+                },
+                "region": {
+                  "startLine": 53,
+                  "startColumn": 0,
+                  "endLine": 53,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
           "ruleId": "detect-path-traversal",
           "level": "error",
           "message": {
             "text": "Path traversal vulnerability: fs.readFile uses dynamically concatenated path, vulnerable to path traversal"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-path-traversal.js"
+                },
+                "region": {
+                  "startLine": 69,
+                  "startColumn": 0,
+                  "endLine": 69,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "avoid-unsafe-fs-access",
+          "level": "warning",
+          "message": {
+            "text": "Unsafe file system access: fs.readFile uses dynamically concatenated path, vulnerable to path traversal"
           },
           "locations": [
             {
@@ -1156,10 +1477,54 @@
           ]
         },
         {
+          "ruleId": "avoid-unsafe-fs-access",
+          "level": "warning",
+          "message": {
+            "text": "Unsafe file system access: fs.writeFileSync uses dynamically concatenated path, vulnerable to path traversal"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-path-traversal.js"
+                },
+                "region": {
+                  "startLine": 70,
+                  "startColumn": 0,
+                  "endLine": 70,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
           "ruleId": "detect-path-traversal",
           "level": "error",
           "message": {
             "text": "Path traversal vulnerability: fs.appendFile uses dynamically concatenated path, vulnerable to path traversal"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-path-traversal.js"
+                },
+                "region": {
+                  "startLine": 74,
+                  "startColumn": 0,
+                  "endLine": 74,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "avoid-unsafe-fs-access",
+          "level": "warning",
+          "message": {
+            "text": "Unsafe file system access: fs.appendFile uses dynamically concatenated path, vulnerable to path traversal"
           },
           "locations": [
             {
@@ -1244,6 +1609,50 @@
           ]
         },
         {
+          "ruleId": "avoid-unsafe-fs-access",
+          "level": "warning",
+          "message": {
+            "text": "Unsafe file system access: fs.rename uses dynamically concatenated path, vulnerable to path traversal"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-path-traversal.js"
+                },
+                "region": {
+                  "startLine": 82,
+                  "startColumn": 0,
+                  "endLine": 82,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "avoid-unsafe-fs-access",
+          "level": "warning",
+          "message": {
+            "text": "Unsafe file system access: fs.rename uses dynamically concatenated path, vulnerable to path traversal"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-path-traversal.js"
+                },
+                "region": {
+                  "startLine": 82,
+                  "startColumn": 0,
+                  "endLine": 82,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
           "ruleId": "detect-path-traversal",
           "level": "error",
           "message": {
@@ -1270,6 +1679,50 @@
           "level": "error",
           "message": {
             "text": "Path traversal vulnerability: fs.copyFile uses dynamically concatenated path, vulnerable to path traversal"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-path-traversal.js"
+                },
+                "region": {
+                  "startLine": 86,
+                  "startColumn": 0,
+                  "endLine": 86,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "avoid-unsafe-fs-access",
+          "level": "warning",
+          "message": {
+            "text": "Unsafe file system access: fs.copyFile uses dynamically concatenated path, vulnerable to path traversal"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-path-traversal.js"
+                },
+                "region": {
+                  "startLine": 86,
+                  "startColumn": 0,
+                  "endLine": 86,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "avoid-unsafe-fs-access",
+          "level": "warning",
+          "message": {
+            "text": "Unsafe file system access: fs.copyFile uses dynamically concatenated path, vulnerable to path traversal"
           },
           "locations": [
             {
@@ -1314,6 +1767,28 @@
           "level": "error",
           "message": {
             "text": "Path traversal vulnerability: fs.readFile uses dynamically concatenated path, vulnerable to path traversal"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-path-traversal.js"
+                },
+                "region": {
+                  "startLine": 94,
+                  "startColumn": 0,
+                  "endLine": 94,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "avoid-unsafe-fs-access",
+          "level": "warning",
+          "message": {
+            "text": "Unsafe file system access: fs.readFile uses dynamically concatenated path, vulnerable to path traversal"
           },
           "locations": [
             {
@@ -2007,6 +2482,1194 @@
                   "startLine": 155,
                   "startColumn": 0,
                   "endLine": 155,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-path-traversal",
+          "level": "error",
+          "message": {
+            "text": "Path traversal vulnerability: fs.readFile uses dynamically concatenated path, vulnerable to path traversal"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-unsafe-fs-access.js"
+                },
+                "region": {
+                  "startLine": 3,
+                  "startColumn": 0,
+                  "endLine": 3,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "avoid-unsafe-fs-access",
+          "level": "warning",
+          "message": {
+            "text": "Unsafe file system access: fs.readFile uses dynamically concatenated path, vulnerable to path traversal"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-unsafe-fs-access.js"
+                },
+                "region": {
+                  "startLine": 3,
+                  "startColumn": 0,
+                  "endLine": 3,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-path-traversal",
+          "level": "error",
+          "message": {
+            "text": "Path traversal vulnerability: fs.writeFile uses dynamically concatenated path, vulnerable to path traversal"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-unsafe-fs-access.js"
+                },
+                "region": {
+                  "startLine": 7,
+                  "startColumn": 0,
+                  "endLine": 7,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "avoid-unsafe-fs-access",
+          "level": "warning",
+          "message": {
+            "text": "Unsafe file system access: fs.writeFile uses dynamically concatenated path, vulnerable to path traversal"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-unsafe-fs-access.js"
+                },
+                "region": {
+                  "startLine": 7,
+                  "startColumn": 0,
+                  "endLine": 7,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-path-traversal",
+          "level": "error",
+          "message": {
+            "text": "Path traversal vulnerability: fs.unlink uses dynamically concatenated path, vulnerable to path traversal"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-unsafe-fs-access.js"
+                },
+                "region": {
+                  "startLine": 11,
+                  "startColumn": 0,
+                  "endLine": 11,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "avoid-unsafe-fs-access",
+          "level": "warning",
+          "message": {
+            "text": "Unsafe file system access: fs.unlink uses dynamically concatenated path, vulnerable to path traversal"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-unsafe-fs-access.js"
+                },
+                "region": {
+                  "startLine": 11,
+                  "startColumn": 0,
+                  "endLine": 11,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-path-traversal",
+          "level": "error",
+          "message": {
+            "text": "Path traversal vulnerability: fs.mkdir uses dynamically concatenated path, vulnerable to path traversal"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-unsafe-fs-access.js"
+                },
+                "region": {
+                  "startLine": 15,
+                  "startColumn": 0,
+                  "endLine": 15,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "avoid-unsafe-fs-access",
+          "level": "warning",
+          "message": {
+            "text": "Unsafe file system access: fs.mkdir uses dynamically concatenated path, vulnerable to path traversal"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-unsafe-fs-access.js"
+                },
+                "region": {
+                  "startLine": 15,
+                  "startColumn": 0,
+                  "endLine": 15,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-path-traversal",
+          "level": "error",
+          "message": {
+            "text": "Path traversal vulnerability: fs.rmdir uses dynamically concatenated path, vulnerable to path traversal"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-unsafe-fs-access.js"
+                },
+                "region": {
+                  "startLine": 19,
+                  "startColumn": 0,
+                  "endLine": 19,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "avoid-unsafe-fs-access",
+          "level": "warning",
+          "message": {
+            "text": "Unsafe file system access: fs.rmdir uses dynamically concatenated path, vulnerable to path traversal"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-unsafe-fs-access.js"
+                },
+                "region": {
+                  "startLine": 19,
+                  "startColumn": 0,
+                  "endLine": 19,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-path-traversal",
+          "level": "error",
+          "message": {
+            "text": "Path traversal vulnerability: fs.readdir uses dynamically concatenated path, vulnerable to path traversal"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-unsafe-fs-access.js"
+                },
+                "region": {
+                  "startLine": 23,
+                  "startColumn": 0,
+                  "endLine": 23,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "avoid-unsafe-fs-access",
+          "level": "warning",
+          "message": {
+            "text": "Unsafe file system access: fs.readdir uses dynamically concatenated path, vulnerable to path traversal"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-unsafe-fs-access.js"
+                },
+                "region": {
+                  "startLine": 23,
+                  "startColumn": 0,
+                  "endLine": 23,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-path-traversal",
+          "level": "error",
+          "message": {
+            "text": "Path traversal vulnerability: fs.stat uses dynamically concatenated path, vulnerable to path traversal"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-unsafe-fs-access.js"
+                },
+                "region": {
+                  "startLine": 27,
+                  "startColumn": 0,
+                  "endLine": 27,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "avoid-unsafe-fs-access",
+          "level": "warning",
+          "message": {
+            "text": "Unsafe file system access: fs.stat uses dynamically concatenated path, vulnerable to path traversal"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-unsafe-fs-access.js"
+                },
+                "region": {
+                  "startLine": 27,
+                  "startColumn": 0,
+                  "endLine": 27,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-path-traversal",
+          "level": "error",
+          "message": {
+            "text": "Path traversal vulnerability: fs.existsSync uses dynamically concatenated path, vulnerable to path traversal"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-unsafe-fs-access.js"
+                },
+                "region": {
+                  "startLine": 31,
+                  "startColumn": 0,
+                  "endLine": 31,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "avoid-unsafe-fs-access",
+          "level": "warning",
+          "message": {
+            "text": "Unsafe file system access: fs.existsSync uses dynamically concatenated path, vulnerable to path traversal"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-unsafe-fs-access.js"
+                },
+                "region": {
+                  "startLine": 31,
+                  "startColumn": 0,
+                  "endLine": 31,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-path-traversal",
+          "level": "error",
+          "message": {
+            "text": "Path traversal vulnerability: require('fs').readFile uses dynamically concatenated path, vulnerable to path traversal"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-unsafe-fs-access.js"
+                },
+                "region": {
+                  "startLine": 35,
+                  "startColumn": 0,
+                  "endLine": 35,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "avoid-unsafe-fs-access",
+          "level": "warning",
+          "message": {
+            "text": "Unsafe file system access: require('fs').readFile uses dynamically concatenated path, vulnerable to path traversal"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-unsafe-fs-access.js"
+                },
+                "region": {
+                  "startLine": 35,
+                  "startColumn": 0,
+                  "endLine": 35,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-path-traversal",
+          "level": "error",
+          "message": {
+            "text": "Path traversal vulnerability: require('fs').writeFile uses dynamically concatenated path, vulnerable to path traversal"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-unsafe-fs-access.js"
+                },
+                "region": {
+                  "startLine": 39,
+                  "startColumn": 0,
+                  "endLine": 39,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "avoid-unsafe-fs-access",
+          "level": "warning",
+          "message": {
+            "text": "Unsafe file system access: require('fs').writeFile uses dynamically concatenated path, vulnerable to path traversal"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-unsafe-fs-access.js"
+                },
+                "region": {
+                  "startLine": 39,
+                  "startColumn": 0,
+                  "endLine": 39,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-path-traversal",
+          "level": "error",
+          "message": {
+            "text": "Path traversal vulnerability: readFile uses dynamically concatenated path, vulnerable to path traversal"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-unsafe-fs-access.js"
+                },
+                "region": {
+                  "startLine": 43,
+                  "startColumn": 0,
+                  "endLine": 43,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "avoid-unsafe-fs-access",
+          "level": "warning",
+          "message": {
+            "text": "Unsafe file system access: readFile uses dynamically concatenated path, vulnerable to path traversal"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-unsafe-fs-access.js"
+                },
+                "region": {
+                  "startLine": 43,
+                  "startColumn": 0,
+                  "endLine": 43,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-path-traversal",
+          "level": "error",
+          "message": {
+            "text": "Path traversal vulnerability: fs.appendFile uses dynamically concatenated path, vulnerable to path traversal"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-unsafe-fs-access.js"
+                },
+                "region": {
+                  "startLine": 47,
+                  "startColumn": 0,
+                  "endLine": 47,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "avoid-unsafe-fs-access",
+          "level": "warning",
+          "message": {
+            "text": "Unsafe file system access: fs.appendFile uses dynamically concatenated path, vulnerable to path traversal"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-unsafe-fs-access.js"
+                },
+                "region": {
+                  "startLine": 47,
+                  "startColumn": 0,
+                  "endLine": 47,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-path-traversal",
+          "level": "error",
+          "message": {
+            "text": "Path traversal vulnerability: fs.rename uses dynamically concatenated path, vulnerable to path traversal"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-unsafe-fs-access.js"
+                },
+                "region": {
+                  "startLine": 51,
+                  "startColumn": 0,
+                  "endLine": 51,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-path-traversal",
+          "level": "error",
+          "message": {
+            "text": "Path traversal vulnerability: fs.rename uses dynamically concatenated path, vulnerable to path traversal"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-unsafe-fs-access.js"
+                },
+                "region": {
+                  "startLine": 51,
+                  "startColumn": 0,
+                  "endLine": 51,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "avoid-unsafe-fs-access",
+          "level": "warning",
+          "message": {
+            "text": "Unsafe file system access: fs.rename uses dynamically concatenated path, vulnerable to path traversal"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-unsafe-fs-access.js"
+                },
+                "region": {
+                  "startLine": 51,
+                  "startColumn": 0,
+                  "endLine": 51,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "avoid-unsafe-fs-access",
+          "level": "warning",
+          "message": {
+            "text": "Unsafe file system access: fs.rename uses dynamically concatenated path, vulnerable to path traversal"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-unsafe-fs-access.js"
+                },
+                "region": {
+                  "startLine": 51,
+                  "startColumn": 0,
+                  "endLine": 51,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-path-traversal",
+          "level": "error",
+          "message": {
+            "text": "Path traversal vulnerability: fs.copyFile uses dynamically concatenated path, vulnerable to path traversal"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-unsafe-fs-access.js"
+                },
+                "region": {
+                  "startLine": 55,
+                  "startColumn": 0,
+                  "endLine": 55,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-path-traversal",
+          "level": "error",
+          "message": {
+            "text": "Path traversal vulnerability: fs.copyFile uses dynamically concatenated path, vulnerable to path traversal"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-unsafe-fs-access.js"
+                },
+                "region": {
+                  "startLine": 55,
+                  "startColumn": 0,
+                  "endLine": 55,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "avoid-unsafe-fs-access",
+          "level": "warning",
+          "message": {
+            "text": "Unsafe file system access: fs.copyFile uses dynamically concatenated path, vulnerable to path traversal"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-unsafe-fs-access.js"
+                },
+                "region": {
+                  "startLine": 55,
+                  "startColumn": 0,
+                  "endLine": 55,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "avoid-unsafe-fs-access",
+          "level": "warning",
+          "message": {
+            "text": "Unsafe file system access: fs.copyFile uses dynamically concatenated path, vulnerable to path traversal"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-unsafe-fs-access.js"
+                },
+                "region": {
+                  "startLine": 55,
+                  "startColumn": 0,
+                  "endLine": 55,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-path-traversal",
+          "level": "error",
+          "message": {
+            "text": "Path traversal vulnerability: fs.unlinkSync uses dynamically concatenated path, vulnerable to path traversal"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-unsafe-fs-access.js"
+                },
+                "region": {
+                  "startLine": 75,
+                  "startColumn": 0,
+                  "endLine": 75,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "avoid-unsafe-fs-access",
+          "level": "warning",
+          "message": {
+            "text": "Unsafe file system access: fs.unlinkSync uses dynamically concatenated path, vulnerable to path traversal"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-unsafe-fs-access.js"
+                },
+                "region": {
+                  "startLine": 75,
+                  "startColumn": 0,
+                  "endLine": 75,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-path-traversal",
+          "level": "error",
+          "message": {
+            "text": "Path traversal vulnerability: fs.readFileSync uses dynamically concatenated path, vulnerable to path traversal"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-unsafe-fs-access.js"
+                },
+                "region": {
+                  "startLine": 79,
+                  "startColumn": 0,
+                  "endLine": 79,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "avoid-unsafe-fs-access",
+          "level": "warning",
+          "message": {
+            "text": "Unsafe file system access: fs.readFileSync uses dynamically concatenated path, vulnerable to path traversal"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-unsafe-fs-access.js"
+                },
+                "region": {
+                  "startLine": 79,
+                  "startColumn": 0,
+                  "endLine": 79,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-path-traversal",
+          "level": "error",
+          "message": {
+            "text": "Path traversal vulnerability: fs.writeFileSync uses dynamically concatenated path, vulnerable to path traversal"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-unsafe-fs-access.js"
+                },
+                "region": {
+                  "startLine": 83,
+                  "startColumn": 0,
+                  "endLine": 83,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "avoid-unsafe-fs-access",
+          "level": "warning",
+          "message": {
+            "text": "Unsafe file system access: fs.writeFileSync uses dynamically concatenated path, vulnerable to path traversal"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-unsafe-fs-access.js"
+                },
+                "region": {
+                  "startLine": 83,
+                  "startColumn": 0,
+                  "endLine": 83,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-path-traversal",
+          "level": "error",
+          "message": {
+            "text": "Path traversal vulnerability: fs.mkdirSync uses dynamically concatenated path, vulnerable to path traversal"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-unsafe-fs-access.js"
+                },
+                "region": {
+                  "startLine": 87,
+                  "startColumn": 0,
+                  "endLine": 87,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "avoid-unsafe-fs-access",
+          "level": "warning",
+          "message": {
+            "text": "Unsafe file system access: fs.mkdirSync uses dynamically concatenated path, vulnerable to path traversal"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-unsafe-fs-access.js"
+                },
+                "region": {
+                  "startLine": 87,
+                  "startColumn": 0,
+                  "endLine": 87,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-path-traversal",
+          "level": "error",
+          "message": {
+            "text": "Path traversal vulnerability: fs.rmdirSync uses dynamically concatenated path, vulnerable to path traversal"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-unsafe-fs-access.js"
+                },
+                "region": {
+                  "startLine": 91,
+                  "startColumn": 0,
+                  "endLine": 91,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "avoid-unsafe-fs-access",
+          "level": "warning",
+          "message": {
+            "text": "Unsafe file system access: fs.rmdirSync uses dynamically concatenated path, vulnerable to path traversal"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-unsafe-fs-access.js"
+                },
+                "region": {
+                  "startLine": 91,
+                  "startColumn": 0,
+                  "endLine": 91,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-path-traversal",
+          "level": "error",
+          "message": {
+            "text": "Path traversal vulnerability: fs.readdirSync uses dynamically concatenated path, vulnerable to path traversal"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-unsafe-fs-access.js"
+                },
+                "region": {
+                  "startLine": 95,
+                  "startColumn": 0,
+                  "endLine": 95,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "avoid-unsafe-fs-access",
+          "level": "warning",
+          "message": {
+            "text": "Unsafe file system access: fs.readdirSync uses dynamically concatenated path, vulnerable to path traversal"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-unsafe-fs-access.js"
+                },
+                "region": {
+                  "startLine": 95,
+                  "startColumn": 0,
+                  "endLine": 95,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-path-traversal",
+          "level": "error",
+          "message": {
+            "text": "Path traversal vulnerability: fs.statSync uses dynamically concatenated path, vulnerable to path traversal"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-unsafe-fs-access.js"
+                },
+                "region": {
+                  "startLine": 99,
+                  "startColumn": 0,
+                  "endLine": 99,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "avoid-unsafe-fs-access",
+          "level": "warning",
+          "message": {
+            "text": "Unsafe file system access: fs.statSync uses dynamically concatenated path, vulnerable to path traversal"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-unsafe-fs-access.js"
+                },
+                "region": {
+                  "startLine": 99,
+                  "startColumn": 0,
+                  "endLine": 99,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-path-traversal",
+          "level": "error",
+          "message": {
+            "text": "Path traversal vulnerability: fs.renameSync uses dynamically concatenated path, vulnerable to path traversal"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-unsafe-fs-access.js"
+                },
+                "region": {
+                  "startLine": 103,
+                  "startColumn": 0,
+                  "endLine": 103,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-path-traversal",
+          "level": "error",
+          "message": {
+            "text": "Path traversal vulnerability: fs.renameSync uses dynamically concatenated path, vulnerable to path traversal"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-unsafe-fs-access.js"
+                },
+                "region": {
+                  "startLine": 103,
+                  "startColumn": 0,
+                  "endLine": 103,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "avoid-unsafe-fs-access",
+          "level": "warning",
+          "message": {
+            "text": "Unsafe file system access: fs.renameSync uses dynamically concatenated path, vulnerable to path traversal"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-unsafe-fs-access.js"
+                },
+                "region": {
+                  "startLine": 103,
+                  "startColumn": 0,
+                  "endLine": 103,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "avoid-unsafe-fs-access",
+          "level": "warning",
+          "message": {
+            "text": "Unsafe file system access: fs.renameSync uses dynamically concatenated path, vulnerable to path traversal"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-unsafe-fs-access.js"
+                },
+                "region": {
+                  "startLine": 103,
+                  "startColumn": 0,
+                  "endLine": 103,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-path-traversal",
+          "level": "error",
+          "message": {
+            "text": "Path traversal vulnerability: fs.copyFileSync uses dynamically concatenated path, vulnerable to path traversal"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-unsafe-fs-access.js"
+                },
+                "region": {
+                  "startLine": 107,
+                  "startColumn": 0,
+                  "endLine": 107,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-path-traversal",
+          "level": "error",
+          "message": {
+            "text": "Path traversal vulnerability: fs.copyFileSync uses dynamically concatenated path, vulnerable to path traversal"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-unsafe-fs-access.js"
+                },
+                "region": {
+                  "startLine": 107,
+                  "startColumn": 0,
+                  "endLine": 107,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "avoid-unsafe-fs-access",
+          "level": "warning",
+          "message": {
+            "text": "Unsafe file system access: fs.copyFileSync uses dynamically concatenated path, vulnerable to path traversal"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-unsafe-fs-access.js"
+                },
+                "region": {
+                  "startLine": 107,
+                  "startColumn": 0,
+                  "endLine": 107,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "avoid-unsafe-fs-access",
+          "level": "warning",
+          "message": {
+            "text": "Unsafe file system access: fs.copyFileSync uses dynamically concatenated path, vulnerable to path traversal"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\avoid-unsafe-fs-access.js"
+                },
+                "region": {
+                  "startLine": 107,
+                  "startColumn": 0,
+                  "endLine": 107,
                   "endColumn": 1
                 }
               }
