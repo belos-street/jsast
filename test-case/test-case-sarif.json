@@ -112,6 +112,19 @@
               "defaultConfiguration": {
                 "level": "error"
               }
+            },
+            {
+              "id": "avoid-dangerously-set-innerhtml",
+              "name": "avoid-dangerously-set-innerhtml",
+              "shortDescription": {
+                "text": "Avoid using innerHTML or dangerouslySetInnerHTML with untrusted input"
+              },
+              "fullDescription": {
+                "text": "Avoid using innerHTML or dangerouslySetInnerHTML with untrusted input"
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              }
             }
           ]
         }

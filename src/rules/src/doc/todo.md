@@ -33,7 +33,7 @@
 ## 3. XSS (跨站脚本攻击)
 
 ### 待实现规则
-- `avoid-dangerously-set-innerhtml`: 检测不安全的innerHTML赋值
+- `avoid-dangerously-set-innerhtml`: 检测不安全的innerHTML赋值 ✅
   - 检测: `element.innerHTML = userInput`
   - 检测: `document.getElementById('app').innerHTML = data`
   - 建议: 使用textContent或DOMPurify
@@ -42,7 +42,7 @@
   - 检测: `res.send('<div>' + userInput + '</div>')`
   - 检测: `return <div>{userInput}</div>` (React中未转义)
 
-- `no-eval`: 检测eval函数使用
+- `no-eval`: 检测eval函数使用 ✅
   - 检测: `eval(userInput)`
   - 检测: `setTimeout(userInput, 1000)`
   - 检测: `setInterval(userInput, 1000)`

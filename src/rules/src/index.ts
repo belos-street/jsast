@@ -6,6 +6,7 @@ import { noUnsafeShellRule } from './no-unsafe-shell'
 import { detectSqlInjectionRule } from './detect-sql-injection'
 import { avoidRawSqlRule } from './avoid-raw-sql'
 import { detectMongoDbInjectionRule } from './detect-mongodb-injection'
+import { avoidDangerouslySetInnerHtmlRule } from './avoid-dangerously-set-innerhtml'
 import { noEvalRule } from './no-eval'
 
 export const ruleSet = [
@@ -17,5 +18,6 @@ export const ruleSet = [
   detectSqlInjectionRule,
   avoidRawSqlRule,
   detectMongoDbInjectionRule,
+  avoidDangerouslySetInnerHtmlRule,
   noEvalRule
 ]
