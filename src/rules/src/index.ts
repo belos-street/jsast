@@ -9,6 +9,7 @@ import { detectMongoDbInjectionRule } from './detect-mongodb-injection'
 import { avoidDangerouslySetInnerHtmlRule } from './avoid-dangerously-set-innerhtml'
 import { avoidUnsafeHtmlRule } from './avoid-unsafe-html'
 import { noEvalRule } from './no-eval'
+import { noDocumentWriteRule } from './no-document-write'
 
 export const ruleSet = [
   noConsoleLogRule,
@@ -21,5 +22,6 @@ export const ruleSet = [
   detectMongoDbInjectionRule,
   avoidDangerouslySetInnerHtmlRule,
   avoidUnsafeHtmlRule,
-  noEvalRule
+  noEvalRule,
+  noDocumentWriteRule
 ]

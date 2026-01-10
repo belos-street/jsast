@@ -48,7 +48,7 @@
   - 检测: `setInterval(userInput, 1000)`
   - 建议: 避免使用动态代码执行
 
-- `no-document-write`: 检测document.write使用
+- `no-document-write`: 检测document.write使用 ✅
   - 检测: `document.write(userInput)`
   - 建议: 使用DOM操作方法
 

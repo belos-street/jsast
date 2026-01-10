@@ -27,6 +27,7 @@ export type RuleName =
   | 'avoid-dangerously-set-innerhtml'
   | 'avoid-unsafe-html'
   | 'no-eval'
+  | 'no-document-write'
 export type RuleIssue = Omit<ReportIssue, 'severity' | 'rule' | 'filename'>
 
 export type Rule = {
