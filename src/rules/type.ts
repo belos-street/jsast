@@ -14,6 +14,7 @@ export type RuleCategory =
   | 'insecure-dependencies'
   | 'code-quality'
   | 'other-security'
+  | 'insecure-deserialization'
 
 export type RuleName =
   | 'no-console-log'
@@ -30,6 +31,8 @@ export type RuleName =
   | 'no-document-write'
   | 'detect-path-traversal'
   | 'avoid-unsafe-fs-access'
+  | 'validate-json-parse'
+
 export type RuleIssue = Omit<ReportIssue, 'severity' | 'rule' | 'filename'>
 
 export type Rule = {

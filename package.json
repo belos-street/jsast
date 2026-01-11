@@ -15,7 +15,8 @@
     "lint": "eslint src/**/*.ts",
     "lint:fix": "eslint src/**/*.ts --fix",
     "clean": "rm -rf dist bin",
-    "tsc": "tsc --noEmit"
+    "tsc": "tsc --noEmit",
+    "test-case": "bun run dev -p ./test-case -r ./lib/rule.json"
   },
   "devDependencies": {
     "@types/babel__core": "^7.20.5",

@@ -12,6 +12,7 @@ import { noEvalRule } from './no-eval'
 import { noDocumentWriteRule } from './no-document-write'
 import { detectPathTraversalRule } from './detect-path-traversal'
 import { avoidUnsafeFsAccessRule } from './avoid-unsafe-fs-access'
+import { validateJsonParseRule } from './validate-json-parse'
 
 export const ruleSet = [
   noConsoleLogRule,
@@ -27,5 +28,6 @@ export const ruleSet = [
   noEvalRule,
   noDocumentWriteRule,
   detectPathTraversalRule,
-  avoidUnsafeFsAccessRule
+  avoidUnsafeFsAccessRule,
+  validateJsonParseRule
 ]
