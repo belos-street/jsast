@@ -4,6 +4,26 @@ import type { RuleIssue } from '../type'
 
 /**
  * SQL注入检测规则
+ *
+ * 设计思路：
+ * 1. 检测常见 SQL 查询方法：query、execute、exec、run、all、where
+ * 2. 检测多种数据库库：mysql、mysql2、pg、sqlite3、sequelize
+ * 3. 检测动态 SQL 字符串：模板字符串（包含表达式）和二元表达式（字符串拼接）
+ * 4. 支持多种调用模式：直接调用、require 调用、NewExpression、嵌套 MemberExpression
+ *
+ * 检测范围：
+ * - mysql.query(`SELECT * FROM users WHERE id = ${userInput}`): MySQL 动态查询
+ * - pg.query('SELECT * FROM users WHERE name = ' + userInput): PostgreSQL 字符串拼接
+ * - sqlite3.db.run(`INSERT INTO users VALUES (${userInput})`): SQLite3 动态查询
+ * - User.where(`name = '${userInput}'`): Sequelize 动态查询
+ * - connection.query(`SELECT * FROM ${table}`): 连接对象动态查询
+ * - require('mysql').query(`SELECT * FROM users WHERE id = ${id}`): require 调用
+ * - new pg.Client().query(`SELECT * FROM users WHERE id = ${id}`): NewExpression
+ *
+ * 安全模式（不检测）：
+ * - 静态 SQL：mysql.query('SELECT * FROM users')
+ * - 参数化查询：mysql.query('SELECT * FROM users WHERE id = ?', [id])
+ * - 字符串字面量：pg.query('SELECT * FROM users')
  */
 export const detectSqlInjectionRule: Rule = {
   name: 'detect-sql-injection',

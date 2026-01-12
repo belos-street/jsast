@@ -1,6 +1,27 @@
 import type { Rule } from '..'
 import type { RuleIssue } from '../type'
 
+/**
+ * 不安全的 shell 选项检测规则
+ *
+ * 设计思路：
+ * 1. 检测 child_process 模块的 spawn、spawnSync、exec、execSync、execFile、execFileSync 调用
+ * 2. 检查参数对象中是否包含 shell 选项
+ * 3. 判断 shell 选项是否为 true 或非空字符串
+ * 4. 支持多种调用模式：直接调用、require 调用、变量引用
+ *
+ * 检测范围：
+ * - child_process.spawn('cmd', { shell: true }): shell 选项为 true
+ * - child_process.spawn('cmd', { shell: '/bin/bash' }): shell 选项为字符串
+ * - child_process.exec('cmd', { shell: true }): exec 方法
+ * - require('child_process').spawn('cmd', { shell: true }): require 调用
+ * - spawn('cmd', { shell: true }): 直接调用
+ *
+ * 安全模式（不检测）：
+ * - 禁用 shell：child_process.spawn('cmd', { shell: false })
+ * - 无 shell 选项：child_process.spawn('cmd', {})
+ * - shell 选项为空字符串：child_process.spawn('cmd', { shell: '' })
+ */
 export const noUnsafeShellRule: Rule = {
   name: 'no-unsafe-shell',
   description: 'Detects command execution with shell option enabled',

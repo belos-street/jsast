@@ -72,11 +72,11 @@
 ## 5. 不安全的反序列化 (Insecure Deserialization)
 
 ### 待实现规则
-- `validate-json-parse`: 检测不安全的JSON解析
+- `validate-json-parse`: 检测不安全的JSON解析 ✅
   - 检测: `JSON.parse(userInput)` (未验证输入)
   - 建议: 使用try-catch并验证输入
 
-- `detect-prototype-pollution`: 检测原型污染风险
+- `detect-prototype-pollution`: 检测原型污染风险 ✅
   - 检测: `obj['__proto__'] = maliciousData`
   - 检测: `Object.assign(target, userInput)`
   - 建议: 使用Object.freeze或深拷贝

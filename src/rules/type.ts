@@ -32,6 +32,7 @@ export type RuleName =
   | 'detect-path-traversal'
   | 'avoid-unsafe-fs-access'
   | 'validate-json-parse'
+  | 'detect-prototype-pollution'
 
 export type RuleIssue = Omit<ReportIssue, 'severity' | 'rule' | 'filename'>
 

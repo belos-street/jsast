@@ -13,6 +13,7 @@ import { noDocumentWriteRule } from './no-document-write'
 import { detectPathTraversalRule } from './detect-path-traversal'
 import { avoidUnsafeFsAccessRule } from './avoid-unsafe-fs-access'
 import { validateJsonParseRule } from './validate-json-parse'
+import { detectPrototypePollutionRule } from './detect-prototype-pollution'
 
 export const ruleSet = [
   noConsoleLogRule,
@@ -29,5 +30,6 @@ export const ruleSet = [
   noDocumentWriteRule,
   detectPathTraversalRule,
   avoidUnsafeFsAccessRule,
-  validateJsonParseRule
+  validateJsonParseRule,
+  detectPrototypePollutionRule
 ]

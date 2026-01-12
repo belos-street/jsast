@@ -3,6 +3,22 @@ import type { RuleIssue } from '../type'
 
 /**
  * 命令行注入检测规则
+ *
+ * 设计思路：
+ * 1. 检测 child_process 模块的 exec、execSync、execFile、execFileSync 方法调用
+ * 2. 检查第一个参数是否为动态拼接的命令字符串（模板字符串或二元表达式）
+ * 3. 支持多种调用模式：直接调用、require 调用、变量引用
+ *
+ * 检测范围：
+ * - child_process.exec(`cmd ${userInput}`): 动态命令字符串
+ * - child_process.execSync('cmd' + userInput): 字符串拼接
+ * - child_process.execFile(`cmd ${userInput}`): execFile 方法
+ * - require('child_process').exec(`cmd ${userInput}`): require 调用
+ * - exec(`cmd ${userInput}`): 直接调用
+ *
+ * 安全模式（不检测）：
+ * - 静态命令：child_process.exec('ls -la')
+ * - 字符串字面量：child_process.execSync('echo hello')
  */
 export const commandInjectionRule: Rule = {
   name: 'command-injection',
