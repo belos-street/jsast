@@ -164,6 +164,32 @@
               "defaultConfiguration": {
                 "level": "warning"
               }
+            },
+            {
+              "id": "detect-prototype-pollution",
+              "name": "detect-prototype-pollution",
+              "shortDescription": {
+                "text": "Detects prototype pollution vulnerabilities"
+              },
+              "fullDescription": {
+                "text": "Detects prototype pollution vulnerabilities"
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "id": "use-secure-random",
+              "name": "use-secure-random",
+              "shortDescription": {
+                "text": "Use secure random number generation instead of Math.random()"
+              },
+              "fullDescription": {
+                "text": "Use secure random number generation instead of Math.random()"
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              }
             }
           ]
         }
@@ -273,6 +299,28 @@
                   "startLine": 19,
                   "startColumn": 0,
                   "endLine": 19,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "use-secure-random",
+          "level": "warning",
+          "message": {
+            "text": "Insecure random number generation: Math.random() is not cryptographically secure. Use crypto.randomBytes(), crypto.randomInt(), or crypto.randomUUID() for security-sensitive operations"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\validate-json-parse.js"
+                },
+                "region": {
+                  "startLine": 51,
+                  "startColumn": 0,
+                  "endLine": 51,
                   "endColumn": 1
                 }
               }
@@ -406,6 +454,1062 @@
                   "startColumn": 0,
                   "endLine": 75,
                   "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "use-secure-random",
+          "level": "warning",
+          "message": {
+            "text": "Insecure random number generation: Math.random() is not cryptographically secure. Use crypto.randomBytes(), crypto.randomInt(), or crypto.randomUUID() for security-sensitive operations"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\use-secure-random.js"
+                },
+                "region": {
+                  "startLine": 3,
+                  "startColumn": 14,
+                  "endLine": 3,
+                  "endColumn": 15
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "use-secure-random",
+          "level": "warning",
+          "message": {
+            "text": "Insecure random number generation: Math.random() is not cryptographically secure. Use crypto.randomBytes(), crypto.randomInt(), or crypto.randomUUID() for security-sensitive operations"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\use-secure-random.js"
+                },
+                "region": {
+                  "startLine": 7,
+                  "startColumn": 18,
+                  "endLine": 7,
+                  "endColumn": 19
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "use-secure-random",
+          "level": "warning",
+          "message": {
+            "text": "Insecure random number generation: Math.random() is not cryptographically secure. Use crypto.randomBytes(), crypto.randomInt(), or crypto.randomUUID() for security-sensitive operations"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\use-secure-random.js"
+                },
+                "region": {
+                  "startLine": 11,
+                  "startColumn": 11,
+                  "endLine": 11,
+                  "endColumn": 12
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "use-secure-random",
+          "level": "warning",
+          "message": {
+            "text": "Insecure random number generation: Math.random() is not cryptographically secure. Use crypto.randomBytes(), crypto.randomInt(), or crypto.randomUUID() for security-sensitive operations"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\use-secure-random.js"
+                },
+                "region": {
+                  "startLine": 15,
+                  "startColumn": 12,
+                  "endLine": 15,
+                  "endColumn": 13
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "no-console-log",
+          "level": "note",
+          "message": {
+            "text": "Do not use console.log"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\use-secure-random.js"
+                },
+                "region": {
+                  "startLine": 19,
+                  "startColumn": 0,
+                  "endLine": 19,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "use-secure-random",
+          "level": "warning",
+          "message": {
+            "text": "Insecure random number generation: Math.random() is not cryptographically secure. Use crypto.randomBytes(), crypto.randomInt(), or crypto.randomUUID() for security-sensitive operations"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\use-secure-random.js"
+                },
+                "region": {
+                  "startLine": 19,
+                  "startColumn": 12,
+                  "endLine": 19,
+                  "endColumn": 13
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "use-secure-random",
+          "level": "warning",
+          "message": {
+            "text": "Insecure random number generation: Math.random() is not cryptographically secure. Use crypto.randomBytes(), crypto.randomInt(), or crypto.randomUUID() for security-sensitive operations"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\use-secure-random.js"
+                },
+                "region": {
+                  "startLine": 23,
+                  "startColumn": 19,
+                  "endLine": 23,
+                  "endColumn": 20
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "use-secure-random",
+          "level": "warning",
+          "message": {
+            "text": "Insecure random number generation: Math.random() is not cryptographically secure. Use crypto.randomBytes(), crypto.randomInt(), or crypto.randomUUID() for security-sensitive operations"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\use-secure-random.js"
+                },
+                "region": {
+                  "startLine": 27,
+                  "startColumn": 22,
+                  "endLine": 27,
+                  "endColumn": 23
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "use-secure-random",
+          "level": "warning",
+          "message": {
+            "text": "Insecure random number generation: Math.random() is not cryptographically secure. Use crypto.randomBytes(), crypto.randomInt(), or crypto.randomUUID() for security-sensitive operations"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\use-secure-random.js"
+                },
+                "region": {
+                  "startLine": 32,
+                  "startColumn": 23,
+                  "endLine": 32,
+                  "endColumn": 24
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "no-console-log",
+          "level": "note",
+          "message": {
+            "text": "Do not use console.log"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\use-secure-random.js"
+                },
+                "region": {
+                  "startLine": 37,
+                  "startColumn": 2,
+                  "endLine": 37,
+                  "endColumn": 3
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "use-secure-random",
+          "level": "warning",
+          "message": {
+            "text": "Insecure random number generation: Math.random() is not cryptographically secure. Use crypto.randomBytes(), crypto.randomInt(), or crypto.randomUUID() for security-sensitive operations"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\use-secure-random.js"
+                },
+                "region": {
+                  "startLine": 37,
+                  "startColumn": 14,
+                  "endLine": 37,
+                  "endColumn": 15
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "use-secure-random",
+          "level": "warning",
+          "message": {
+            "text": "Insecure random number generation: Math.random() is not cryptographically secure. Use crypto.randomBytes(), crypto.randomInt(), or crypto.randomUUID() for security-sensitive operations"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\use-secure-random.js"
+                },
+                "region": {
+                  "startLine": 42,
+                  "startColumn": 4,
+                  "endLine": 42,
+                  "endColumn": 5
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "no-console-log",
+          "level": "note",
+          "message": {
+            "text": "Do not use console.log"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\use-secure-random.js"
+                },
+                "region": {
+                  "startLine": 43,
+                  "startColumn": 2,
+                  "endLine": 43,
+                  "endColumn": 3
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "use-secure-random",
+          "level": "warning",
+          "message": {
+            "text": "Insecure random number generation: Math.random() is not cryptographically secure. Use crypto.randomBytes(), crypto.randomInt(), or crypto.randomUUID() for security-sensitive operations"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\use-secure-random.js"
+                },
+                "region": {
+                  "startLine": 48,
+                  "startColumn": 15,
+                  "endLine": 48,
+                  "endColumn": 16
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "use-secure-random",
+          "level": "warning",
+          "message": {
+            "text": "Insecure random number generation: Math.random() is not cryptographically secure. Use crypto.randomBytes(), crypto.randomInt(), or crypto.randomUUID() for security-sensitive operations"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\use-secure-random.js"
+                },
+                "region": {
+                  "startLine": 52,
+                  "startColumn": 14,
+                  "endLine": 52,
+                  "endColumn": 15
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "use-secure-random",
+          "level": "warning",
+          "message": {
+            "text": "Insecure random number generation: Math.random() is not cryptographically secure. Use crypto.randomBytes(), crypto.randomInt(), or crypto.randomUUID() for security-sensitive operations"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\use-secure-random.js"
+                },
+                "region": {
+                  "startLine": 56,
+                  "startColumn": 11,
+                  "endLine": 56,
+                  "endColumn": 12
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "use-secure-random",
+          "level": "warning",
+          "message": {
+            "text": "Insecure random number generation: Math.random() is not cryptographically secure. Use crypto.randomBytes(), crypto.randomInt(), or crypto.randomUUID() for security-sensitive operations"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\use-secure-random.js"
+                },
+                "region": {
+                  "startLine": 60,
+                  "startColumn": 18,
+                  "endLine": 60,
+                  "endColumn": 19
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "use-secure-random",
+          "level": "warning",
+          "message": {
+            "text": "Insecure random number generation: Math.random() is not cryptographically secure. Use crypto.randomBytes(), crypto.randomInt(), or crypto.randomUUID() for security-sensitive operations"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\use-secure-random.js"
+                },
+                "region": {
+                  "startLine": 64,
+                  "startColumn": 14,
+                  "endLine": 64,
+                  "endColumn": 15
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "no-console-log",
+          "level": "note",
+          "message": {
+            "text": "Do not use console.log"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\use-secure-random.js"
+                },
+                "region": {
+                  "startLine": 69,
+                  "startColumn": 13,
+                  "endLine": 69,
+                  "endColumn": 14
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "use-secure-random",
+          "level": "warning",
+          "message": {
+            "text": "Insecure random number generation: Math.random() is not cryptographically secure. Use crypto.randomBytes(), crypto.randomInt(), or crypto.randomUUID() for security-sensitive operations"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\use-secure-random.js"
+                },
+                "region": {
+                  "startLine": 69,
+                  "startColumn": 34,
+                  "endLine": 69,
+                  "endColumn": 35
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "use-secure-random",
+          "level": "warning",
+          "message": {
+            "text": "Insecure random number generation: Math.random() is not cryptographically secure. Use crypto.randomBytes(), crypto.randomInt(), or crypto.randomUUID() for security-sensitive operations"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\use-secure-random.js"
+                },
+                "region": {
+                  "startLine": 73,
+                  "startColumn": 38,
+                  "endLine": 73,
+                  "endColumn": 39
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "use-secure-random",
+          "level": "warning",
+          "message": {
+            "text": "Insecure random number generation: Math.random() is not cryptographically secure. Use crypto.randomBytes(), crypto.randomInt(), or crypto.randomUUID() for security-sensitive operations"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\use-secure-random.js"
+                },
+                "region": {
+                  "startLine": 77,
+                  "startColumn": 22,
+                  "endLine": 77,
+                  "endColumn": 23
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "use-secure-random",
+          "level": "warning",
+          "message": {
+            "text": "Insecure random number generation: Math.random() is not cryptographically secure. Use crypto.randomBytes(), crypto.randomInt(), or crypto.randomUUID() for security-sensitive operations"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\use-secure-random.js"
+                },
+                "region": {
+                  "startLine": 81,
+                  "startColumn": 27,
+                  "endLine": 81,
+                  "endColumn": 28
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "use-secure-random",
+          "level": "warning",
+          "message": {
+            "text": "Insecure random number generation: Math.random() is not cryptographically secure. Use crypto.randomBytes(), crypto.randomInt(), or crypto.randomUUID() for security-sensitive operations"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\use-secure-random.js"
+                },
+                "region": {
+                  "startLine": 85,
+                  "startColumn": 14,
+                  "endLine": 85,
+                  "endColumn": 15
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "use-secure-random",
+          "level": "warning",
+          "message": {
+            "text": "Insecure random number generation: Math.random() is not cryptographically secure. Use crypto.randomBytes(), crypto.randomInt(), or crypto.randomUUID() for security-sensitive operations"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\use-secure-random.js"
+                },
+                "region": {
+                  "startLine": 89,
+                  "startColumn": 32,
+                  "endLine": 89,
+                  "endColumn": 33
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "use-secure-random",
+          "level": "warning",
+          "message": {
+            "text": "Insecure random number generation: Math.random() is not cryptographically secure. Use crypto.randomBytes(), crypto.randomInt(), or crypto.randomUUID() for security-sensitive operations"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\use-secure-random.js"
+                },
+                "region": {
+                  "startLine": 93,
+                  "startColumn": 33,
+                  "endLine": 93,
+                  "endColumn": 34
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "use-secure-random",
+          "level": "warning",
+          "message": {
+            "text": "Insecure random number generation: Math.random() is not cryptographically secure. Use crypto.randomBytes(), crypto.randomInt(), or crypto.randomUUID() for security-sensitive operations"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\use-secure-random.js"
+                },
+                "region": {
+                  "startLine": 97,
+                  "startColumn": 20,
+                  "endLine": 97,
+                  "endColumn": 21
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "use-secure-random",
+          "level": "warning",
+          "message": {
+            "text": "Insecure random number generation: Math.random() is not cryptographically secure. Use crypto.randomBytes(), crypto.randomInt(), or crypto.randomUUID() for security-sensitive operations"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\use-secure-random.js"
+                },
+                "region": {
+                  "startLine": 101,
+                  "startColumn": 26,
+                  "endLine": 101,
+                  "endColumn": 27
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "use-secure-random",
+          "level": "warning",
+          "message": {
+            "text": "Insecure random number generation: Math.random() is not cryptographically secure. Use crypto.randomBytes(), crypto.randomInt(), or crypto.randomUUID() for security-sensitive operations"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\use-secure-random.js"
+                },
+                "region": {
+                  "startLine": 108,
+                  "startColumn": 14,
+                  "endLine": 108,
+                  "endColumn": 15
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "use-secure-random",
+          "level": "warning",
+          "message": {
+            "text": "Insecure random number generation: Math.random() is not cryptographically secure. Use crypto.randomBytes(), crypto.randomInt(), or crypto.randomUUID() for security-sensitive operations"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\use-secure-random.js"
+                },
+                "region": {
+                  "startLine": 115,
+                  "startColumn": 8,
+                  "endLine": 115,
+                  "endColumn": 9
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "no-console-log",
+          "level": "note",
+          "message": {
+            "text": "Do not use console.log"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\use-secure-random.js"
+                },
+                "region": {
+                  "startLine": 117,
+                  "startColumn": 4,
+                  "endLine": 117,
+                  "endColumn": 5
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "no-console-log",
+          "level": "note",
+          "message": {
+            "text": "Do not use console.log"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\use-secure-random.js"
+                },
+                "region": {
+                  "startLine": 120,
+                  "startColumn": 4,
+                  "endLine": 120,
+                  "endColumn": 5
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "use-secure-random",
+          "level": "warning",
+          "message": {
+            "text": "Insecure random number generation: Math.random() is not cryptographically secure. Use crypto.randomBytes(), crypto.randomInt(), or crypto.randomUUID() for security-sensitive operations"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\use-secure-random.js"
+                },
+                "region": {
+                  "startLine": 125,
+                  "startColumn": 7,
+                  "endLine": 125,
+                  "endColumn": 8
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "no-console-log",
+          "level": "note",
+          "message": {
+            "text": "Do not use console.log"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\use-secure-random.js"
+                },
+                "region": {
+                  "startLine": 126,
+                  "startColumn": 2,
+                  "endLine": 126,
+                  "endColumn": 3
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "no-console-log",
+          "level": "note",
+          "message": {
+            "text": "Do not use console.log"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\use-secure-random.js"
+                },
+                "region": {
+                  "startLine": 132,
+                  "startColumn": 2,
+                  "endLine": 132,
+                  "endColumn": 3
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "use-secure-random",
+          "level": "warning",
+          "message": {
+            "text": "Insecure random number generation: Math.random() is not cryptographically secure. Use crypto.randomBytes(), crypto.randomInt(), or crypto.randomUUID() for security-sensitive operations"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\use-secure-random.js"
+                },
+                "region": {
+                  "startLine": 133,
+                  "startColumn": 9,
+                  "endLine": 133,
+                  "endColumn": 10
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "use-secure-random",
+          "level": "warning",
+          "message": {
+            "text": "Insecure random number generation: Math.random() is not cryptographically secure. Use crypto.randomBytes(), crypto.randomInt(), or crypto.randomUUID() for security-sensitive operations"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\use-secure-random.js"
+                },
+                "region": {
+                  "startLine": 137,
+                  "startColumn": 23,
+                  "endLine": 137,
+                  "endColumn": 24
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "no-console-log",
+          "level": "note",
+          "message": {
+            "text": "Do not use console.log"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\use-secure-random.js"
+                },
+                "region": {
+                  "startLine": 138,
+                  "startColumn": 2,
+                  "endLine": 138,
+                  "endColumn": 3
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "use-secure-random",
+          "level": "warning",
+          "message": {
+            "text": "Insecure random number generation: Math.random() is not cryptographically secure. Use crypto.randomBytes(), crypto.randomInt(), or crypto.randomUUID() for security-sensitive operations"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\use-secure-random.js"
+                },
+                "region": {
+                  "startLine": 143,
+                  "startColumn": 19,
+                  "endLine": 143,
+                  "endColumn": 20
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "no-console-log",
+          "level": "note",
+          "message": {
+            "text": "Do not use console.log"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\use-secure-random.js"
+                },
+                "region": {
+                  "startLine": 144,
+                  "startColumn": 2,
+                  "endLine": 144,
+                  "endColumn": 3
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "use-secure-random",
+          "level": "warning",
+          "message": {
+            "text": "Insecure random number generation: Math.random() is not cryptographically secure. Use crypto.randomBytes(), crypto.randomInt(), or crypto.randomUUID() for security-sensitive operations"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\use-secure-random.js"
+                },
+                "region": {
+                  "startLine": 150,
+                  "startColumn": 14,
+                  "endLine": 150,
+                  "endColumn": 15
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "use-secure-random",
+          "level": "warning",
+          "message": {
+            "text": "Insecure random number generation: Math.random() is not cryptographically secure. Use crypto.randomBytes(), crypto.randomInt(), or crypto.randomUUID() for security-sensitive operations"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\use-secure-random.js"
+                },
+                "region": {
+                  "startLine": 155,
+                  "startColumn": 16,
+                  "endLine": 155,
+                  "endColumn": 17
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "use-secure-random",
+          "level": "warning",
+          "message": {
+            "text": "Insecure random number generation: Math.random() is not cryptographically secure. Use crypto.randomBytes(), crypto.randomInt(), or crypto.randomUUID() for security-sensitive operations"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\use-secure-random.js"
+                },
+                "region": {
+                  "startLine": 159,
+                  "startColumn": 17,
+                  "endLine": 159,
+                  "endColumn": 18
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "use-secure-random",
+          "level": "warning",
+          "message": {
+            "text": "Insecure random number generation: Math.random() is not cryptographically secure. Use crypto.randomBytes(), crypto.randomInt(), or crypto.randomUUID() for security-sensitive operations"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\use-secure-random.js"
+                },
+                "region": {
+                  "startLine": 165,
+                  "startColumn": 10,
+                  "endLine": 165,
+                  "endColumn": 11
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "use-secure-random",
+          "level": "warning",
+          "message": {
+            "text": "Insecure random number generation: Math.random() is not cryptographically secure. Use crypto.randomBytes(), crypto.randomInt(), or crypto.randomUUID() for security-sensitive operations"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\use-secure-random.js"
+                },
+                "region": {
+                  "startLine": 172,
+                  "startColumn": 8,
+                  "endLine": 172,
+                  "endColumn": 9
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "use-secure-random",
+          "level": "warning",
+          "message": {
+            "text": "Insecure random number generation: Math.random() is not cryptographically secure. Use crypto.randomBytes(), crypto.randomInt(), or crypto.randomUUID() for security-sensitive operations"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\use-secure-random.js"
+                },
+                "region": {
+                  "startLine": 178,
+                  "startColumn": 10,
+                  "endLine": 178,
+                  "endColumn": 11
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "use-secure-random",
+          "level": "warning",
+          "message": {
+            "text": "Insecure random number generation: Math.random() is not cryptographically secure. Use crypto.randomBytes(), crypto.randomInt(), or crypto.randomUUID() for security-sensitive operations"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\use-secure-random.js"
+                },
+                "region": {
+                  "startLine": 223,
+                  "startColumn": 10,
+                  "endLine": 223,
+                  "endColumn": 11
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "use-secure-random",
+          "level": "warning",
+          "message": {
+            "text": "Insecure random number generation: Math.random() is not cryptographically secure. Use crypto.randomBytes(), crypto.randomInt(), or crypto.randomUUID() for security-sensitive operations"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\use-secure-random.js"
+                },
+                "region": {
+                  "startLine": 224,
+                  "startColumn": 10,
+                  "endLine": 224,
+                  "endColumn": 11
                 }
               }
             }
@@ -1087,6 +2191,512 @@
                   "startLine": 69,
                   "startColumn": 0,
                   "endLine": 69,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-prototype-pollution",
+          "level": "error",
+          "message": {
+            "text": "Prototype pollution: Direct assignment to Object.prototype with dynamic key, vulnerable to prototype pollution attacks"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-prototype-pollution.js"
+                },
+                "region": {
+                  "startLine": 3,
+                  "startColumn": 0,
+                  "endLine": 3,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-prototype-pollution",
+          "level": "error",
+          "message": {
+            "text": "Prototype pollution: Direct assignment to __proto__ property, vulnerable to prototype pollution attacks"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-prototype-pollution.js"
+                },
+                "region": {
+                  "startLine": 7,
+                  "startColumn": 0,
+                  "endLine": 7,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-prototype-pollution",
+          "level": "error",
+          "message": {
+            "text": "Prototype pollution: Direct assignment to prototype with dynamic key, vulnerable to prototype pollution attacks"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-prototype-pollution.js"
+                },
+                "region": {
+                  "startLine": 11,
+                  "startColumn": 0,
+                  "endLine": 11,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-prototype-pollution",
+          "level": "error",
+          "message": {
+            "text": "Prototype pollution: Object.assign with __proto__ property, vulnerable to prototype pollution attacks"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-prototype-pollution.js"
+                },
+                "region": {
+                  "startLine": 15,
+                  "startColumn": 0,
+                  "endLine": 15,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-prototype-pollution",
+          "level": "error",
+          "message": {
+            "text": "Prototype pollution: Object.defineProperty with __proto__ property, vulnerable to prototype pollution attacks"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-prototype-pollution.js"
+                },
+                "region": {
+                  "startLine": 19,
+                  "startColumn": 0,
+                  "endLine": 19,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-prototype-pollution",
+          "level": "error",
+          "message": {
+            "text": "Prototype pollution: Object.create with object containing prototype pollution properties, vulnerable to prototype pollution attacks"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-prototype-pollution.js"
+                },
+                "region": {
+                  "startLine": 23,
+                  "startColumn": 0,
+                  "endLine": 23,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-prototype-pollution",
+          "level": "error",
+          "message": {
+            "text": "Prototype pollution: Object.setPrototypeOf with untrusted input, vulnerable to prototype pollution attacks"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-prototype-pollution.js"
+                },
+                "region": {
+                  "startLine": 27,
+                  "startColumn": 0,
+                  "endLine": 27,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-prototype-pollution",
+          "level": "error",
+          "message": {
+            "text": "Prototype pollution: Reflect.defineProperty with __proto__ property, vulnerable to prototype pollution attacks"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-prototype-pollution.js"
+                },
+                "region": {
+                  "startLine": 31,
+                  "startColumn": 0,
+                  "endLine": 31,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-prototype-pollution",
+          "level": "error",
+          "message": {
+            "text": "Prototype pollution: lodash.merge with untrusted input, vulnerable to prototype pollution attacks"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-prototype-pollution.js"
+                },
+                "region": {
+                  "startLine": 35,
+                  "startColumn": 0,
+                  "endLine": 35,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-prototype-pollution",
+          "level": "error",
+          "message": {
+            "text": "Prototype pollution: lodash.merge with untrusted input, vulnerable to prototype pollution attacks"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-prototype-pollution.js"
+                },
+                "region": {
+                  "startLine": 39,
+                  "startColumn": 0,
+                  "endLine": 39,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-prototype-pollution",
+          "level": "error",
+          "message": {
+            "text": "Prototype pollution: jQuery.extend with untrusted input, vulnerable to prototype pollution attacks"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-prototype-pollution.js"
+                },
+                "region": {
+                  "startLine": 43,
+                  "startColumn": 0,
+                  "endLine": 43,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-prototype-pollution",
+          "level": "error",
+          "message": {
+            "text": "Prototype pollution: jQuery.extend with untrusted input, vulnerable to prototype pollution attacks"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-prototype-pollution.js"
+                },
+                "region": {
+                  "startLine": 47,
+                  "startColumn": 0,
+                  "endLine": 47,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-prototype-pollution",
+          "level": "error",
+          "message": {
+            "text": "Prototype pollution: Spread operator with object containing prototype pollution properties, vulnerable to prototype pollution attacks"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-prototype-pollution.js"
+                },
+                "region": {
+                  "startLine": 51,
+                  "startColumn": 15,
+                  "endLine": 51,
+                  "endColumn": 16
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-prototype-pollution",
+          "level": "error",
+          "message": {
+            "text": "Prototype pollution: Object.assign with computed property, vulnerable to prototype pollution attacks"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-prototype-pollution.js"
+                },
+                "region": {
+                  "startLine": 55,
+                  "startColumn": 0,
+                  "endLine": 55,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-prototype-pollution",
+          "level": "error",
+          "message": {
+            "text": "Prototype pollution: Direct assignment to Object.prototype with dynamic key, vulnerable to prototype pollution attacks"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-prototype-pollution.js"
+                },
+                "region": {
+                  "startLine": 59,
+                  "startColumn": 0,
+                  "endLine": 59,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-prototype-pollution",
+          "level": "error",
+          "message": {
+            "text": "Prototype pollution: Direct assignment to __proto__ property, vulnerable to prototype pollution attacks"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-prototype-pollution.js"
+                },
+                "region": {
+                  "startLine": 63,
+                  "startColumn": 0,
+                  "endLine": 63,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-prototype-pollution",
+          "level": "error",
+          "message": {
+            "text": "Prototype pollution: Direct assignment to prototype with dynamic key, vulnerable to prototype pollution attacks"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-prototype-pollution.js"
+                },
+                "region": {
+                  "startLine": 67,
+                  "startColumn": 0,
+                  "endLine": 67,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-prototype-pollution",
+          "level": "error",
+          "message": {
+            "text": "Prototype pollution: lodash.merge with object containing prototype pollution properties, vulnerable to prototype pollution attacks"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-prototype-pollution.js"
+                },
+                "region": {
+                  "startLine": 71,
+                  "startColumn": 0,
+                  "endLine": 71,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-prototype-pollution",
+          "level": "error",
+          "message": {
+            "text": "Prototype pollution: lodash.merge with object containing prototype pollution properties, vulnerable to prototype pollution attacks"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-prototype-pollution.js"
+                },
+                "region": {
+                  "startLine": 75,
+                  "startColumn": 0,
+                  "endLine": 75,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-prototype-pollution",
+          "level": "error",
+          "message": {
+            "text": "Prototype pollution: lodash.merge with object containing prototype pollution properties, vulnerable to prototype pollution attacks"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-prototype-pollution.js"
+                },
+                "region": {
+                  "startLine": 79,
+                  "startColumn": 0,
+                  "endLine": 79,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-prototype-pollution",
+          "level": "error",
+          "message": {
+            "text": "Prototype pollution: Object.assign with computed property, vulnerable to prototype pollution attacks"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-prototype-pollution.js"
+                },
+                "region": {
+                  "startLine": 119,
+                  "startColumn": 0,
+                  "endLine": 119,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-prototype-pollution",
+          "level": "error",
+          "message": {
+            "text": "Prototype pollution: Object.assign with computed property, vulnerable to prototype pollution attacks"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-prototype-pollution.js"
+                },
+                "region": {
+                  "startLine": 123,
+                  "startColumn": 0,
+                  "endLine": 123,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "detect-prototype-pollution",
+          "level": "error",
+          "message": {
+            "text": "Prototype pollution: Object.assign with computed property, vulnerable to prototype pollution attacks"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-prototype-pollution.js"
+                },
+                "region": {
+                  "startLine": 127,
+                  "startColumn": 0,
+                  "endLine": 127,
                   "endColumn": 1
                 }
               }
@@ -2540,6 +4150,28 @@
                   "startColumn": 0,
                   "endLine": 121,
                   "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "use-secure-random",
+          "level": "warning",
+          "message": {
+            "text": "Insecure random number generation: Math.random() is not cryptographically secure. Use crypto.randomBytes(), crypto.randomInt(), or crypto.randomUUID() for security-sensitive operations"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:\\develop\\code\\personal\\jsast\\test-case\\detect-mongodb-injection.js"
+                },
+                "region": {
+                  "startLine": 125,
+                  "startColumn": 10,
+                  "endLine": 125,
+                  "endColumn": 11
                 }
               }
             }

@@ -10,11 +10,10 @@ export type RuleCategory =
   | 'insecure-randomness'
   | 'hardcoded-secrets'
   | 'insecure-http'
-  | 'insecure-auth'
   | 'insecure-dependencies'
   | 'code-quality'
   | 'other-security'
-  | 'insecure-deserialization'
+  | 'insecure-auth'
 
 export type RuleName =
   | 'no-console-log'
@@ -33,6 +32,7 @@ export type RuleName =
   | 'avoid-unsafe-fs-access'
   | 'validate-json-parse'
   | 'detect-prototype-pollution'
+  | 'use-secure-random'
 
 export type RuleIssue = Omit<ReportIssue, 'severity' | 'rule' | 'filename'>
 

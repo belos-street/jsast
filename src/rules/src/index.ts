@@ -14,6 +14,7 @@ import { detectPathTraversalRule } from './detect-path-traversal'
 import { avoidUnsafeFsAccessRule } from './avoid-unsafe-fs-access'
 import { validateJsonParseRule } from './validate-json-parse'
 import { detectPrototypePollutionRule } from './detect-prototype-pollution'
+import { useSecureRandomRule } from './use-secure-random'
 
 export const ruleSet = [
   noConsoleLogRule,
@@ -31,5 +32,6 @@ export const ruleSet = [
   detectPathTraversalRule,
   avoidUnsafeFsAccessRule,
   validateJsonParseRule,
-  detectPrototypePollutionRule
+  detectPrototypePollutionRule,
+  useSecureRandomRule
 ]

@@ -112,7 +112,7 @@ jQuery.extend(target, { name: "test" })
 
 // 场景29: 不检测安全的展开运算符（安全）
 // 预期: 不触发规则警告
-const result = { ...target, ...{ name: "test" } }
+const result2 = { ...target, ...{ name: "test" } }
 
 // 场景30: 检测Object.assign使用模板字符串键
 // 预期: 触发detect-prototype-pollution规则警告

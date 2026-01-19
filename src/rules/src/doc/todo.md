@@ -86,7 +86,7 @@
 ## 6. 不安全的随机数 (Insecure Randomness)
 
 ### 待实现规则
-- `use-secure-random`: 检测使用Math.random()生成安全随机数
+- `use-secure-random`: 检测使用Math.random()生成安全随机数 ✅
   - 检测: `const token = Math.random().toString(36)`
   - 检测: `const sessionId = Math.random()`
   - 建议: 使用crypto.randomBytes()
