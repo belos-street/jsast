@@ -15,6 +15,7 @@ import { avoidUnsafeFsAccessRule } from './avoid-unsafe-fs-access'
 import { validateJsonParseRule } from './validate-json-parse'
 import { detectPrototypePollutionRule } from './detect-prototype-pollution'
 import { useSecureRandomRule } from './use-secure-random'
+import { avoidWeakCryptoRule } from './avoid-weak-crypto'
 
 export const ruleSet = [
   noConsoleLogRule,
@@ -33,5 +34,6 @@ export const ruleSet = [
   avoidUnsafeFsAccessRule,
   validateJsonParseRule,
   detectPrototypePollutionRule,
-  useSecureRandomRule
+  useSecureRandomRule,
+  avoidWeakCryptoRule
 ]

@@ -91,7 +91,7 @@
   - 检测: `const sessionId = Math.random()`
   - 建议: 使用crypto.randomBytes()
 
-- `avoid-weak-crypto`: 检测弱加密算法
+- `avoid-weak-crypto`: 检测弱加密算法 ✅
   - 检测: `crypto.createHash('md5')`
   - 检测: `crypto.createHash('sha1')`
   - 建议: 使用sha256或更强的算法

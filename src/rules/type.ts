@@ -33,6 +33,7 @@ export type RuleName =
   | 'validate-json-parse'
   | 'detect-prototype-pollution'
   | 'use-secure-random'
+  | 'avoid-weak-crypto'
 
 export type RuleIssue = Omit<ReportIssue, 'severity' | 'rule' | 'filename'>
 
