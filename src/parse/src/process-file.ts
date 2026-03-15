@@ -1,5 +1,6 @@
 import { extname } from 'path'
 import { glob } from 'glob'
+import { stat } from 'fs/promises'
 
 export interface ProcessOptions {
   projectPath: string
@@ -17,13 +18,23 @@ export const processFiles = async (options: ProcessOptions) => {
   const excludes = [...defaultExcludes, ...(options.exclude || [])]
   const extensions = [...defaultExtensions, ...(options.extensions || [])]
 
-  // Use glob pattern matching
-  const files = await glob('**/*', {
-    cwd: options.projectPath,
-    ignore: excludes.map((pattern) => `**/${pattern}/**`),
-    nodir: true,
-    absolute: true
-  })
+  // Check if projectPath is a file or directory
+  const stats = await stat(options.projectPath).catch(() => null)
+
+  let files: string[] = []
+
+  if (stats && stats.isFile()) {
+    // If it's a single file, just return it
+    files = [options.projectPath]
+  } else {
+    // If it's a directory, use glob to find files
+    files = await glob('**/*', {
+      cwd: options.projectPath,
+      ignore: excludes.map((pattern) => `**/${pattern}/**`),
+      nodir: true,
+      absolute: true
+    })
+  }
 
   // Filter by file extensions
   const filteredFiles = files.filter((file) => {

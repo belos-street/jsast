@@ -14,6 +14,7 @@ export type RuleCategory =
   | 'code-quality'
   | 'other-security'
   | 'insecure-auth'
+  | 'hardcoded-secrets'
 
 export type RuleName =
   | 'no-console-log'
@@ -34,6 +35,8 @@ export type RuleName =
   | 'detect-prototype-pollution'
   | 'use-secure-random'
   | 'avoid-weak-crypto'
+  | 'detect-hardcoded-secrets'
+  | 'detect-hardcoded-urls'
 
 export type RuleIssue = Omit<ReportIssue, 'severity' | 'rule' | 'filename'>
 

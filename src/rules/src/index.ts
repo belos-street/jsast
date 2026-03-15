@@ -16,6 +16,8 @@ import { validateJsonParseRule } from './validate-json-parse'
 import { detectPrototypePollutionRule } from './detect-prototype-pollution'
 import { useSecureRandomRule } from './use-secure-random'
 import { avoidWeakCryptoRule } from './avoid-weak-crypto'
+import { detectHardcodedSecretsRule } from './detect-hardcoded-secrets'
+import { detectHardcodedUrlsRule } from './detect-hardcoded-urls'
 
 export const ruleSet = [
   noConsoleLogRule,
@@ -35,5 +37,7 @@ export const ruleSet = [
   validateJsonParseRule,
   detectPrototypePollutionRule,
   useSecureRandomRule,
-  avoidWeakCryptoRule
+  avoidWeakCryptoRule,
+  detectHardcodedSecretsRule,
+  detectHardcodedUrlsRule
 ]
