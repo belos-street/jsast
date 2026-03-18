@@ -18,6 +18,9 @@ import { useSecureRandomRule } from './use-secure-random'
 import { avoidWeakCryptoRule } from './avoid-weak-crypto'
 import { detectHardcodedSecretsRule } from './detect-hardcoded-secrets'
 import { detectHardcodedUrlsRule } from './detect-hardcoded-urls'
+import { useHttpsRule } from './use-https'
+import { avoidSslVerificationDisabledRule } from './avoid-ssl-verification-disabled'
+import { validateRedirectRule } from './validate-redirect'
 
 export const ruleSet = [
   noConsoleLogRule,
@@ -39,5 +42,8 @@ export const ruleSet = [
   useSecureRandomRule,
   avoidWeakCryptoRule,
   detectHardcodedSecretsRule,
-  detectHardcodedUrlsRule
+  detectHardcodedUrlsRule,
+  useHttpsRule,
+  avoidSslVerificationDisabledRule,
+  validateRedirectRule
 ]

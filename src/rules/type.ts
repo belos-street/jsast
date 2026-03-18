@@ -37,6 +37,9 @@ export type RuleName =
   | 'avoid-weak-crypto'
   | 'detect-hardcoded-secrets'
   | 'detect-hardcoded-urls'
+  | 'use-https'
+  | 'avoid-ssl-verification-disabled'
+  | 'validate-redirect'
 
 export type RuleIssue = Omit<ReportIssue, 'severity' | 'rule' | 'filename'>
 
