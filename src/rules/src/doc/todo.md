@@ -116,17 +116,17 @@
 ## 8. 不安全的HTTP请求 (Insecure HTTP Requests)
 
 ### 待实现规则
-- `use-https`: 检测使用http而非https
+- `use-https`: 检测使用http而非https ✅
   - 检测: `fetch('http://api.example.com')`
   - 检测: `axios.get('http://api.example.com')`
   - 建议: 使用https
 
-- `avoid-ssl-verification-disabled`: 检测禁用SSL验证
+- `avoid-ssl-verification-disabled`: 检测禁用SSL验证 ✅
   - 检测: `https.globalAgent.options.rejectUnauthorized = false`
   - 检测: `process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0'`
   - 建议: 启用SSL验证
 
-- `validate-redirect`: 检测不安全的重定向
+- `validate-redirect`: 检测不安全的重定向 ✅
   - 检测: `res.redirect(userInput)`
   - 检测: `window.location.href = userInput`
   - 建议: 验证重定向URL
@@ -136,12 +136,12 @@
 ## 9. 不安全的认证和授权 (Insecure Authentication/Authorization)
 
 ### 待实现规则
-- `hash-passwords`: 检测明文密码存储
+- `hash-passwords`: 检测明文密码存储 ✅
   - 检测: `user.password = 'plainPassword'`
   - 检测: `db.users.insert({ password: '123456' })`
   - 建议: 使用bcrypt等哈希算法
 
-- `enforce-strong-password`: 检测弱密码策略
+- `enforce-strong-password`: 检测弱密码策略 ✅
   - 检测: `if (password.length < 6)`
   - 建议: 实施强密码策略
 

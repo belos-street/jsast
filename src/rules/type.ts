@@ -15,6 +15,7 @@ export type RuleCategory =
   | 'other-security'
   | 'insecure-auth'
   | 'hardcoded-secrets'
+  | 'insecure-authentication'
 
 export type RuleName =
   | 'no-console-log'
@@ -40,6 +41,9 @@ export type RuleName =
   | 'use-https'
   | 'avoid-ssl-verification-disabled'
   | 'validate-redirect'
+  | 'hash-passwords'
+  | 'enforce-strong-password'
+  | 'regenerate-session'
 
 export type RuleIssue = Omit<ReportIssue, 'severity' | 'rule' | 'filename'>
 

@@ -21,6 +21,9 @@ import { detectHardcodedUrlsRule } from './detect-hardcoded-urls'
 import { useHttpsRule } from './use-https'
 import { avoidSslVerificationDisabledRule } from './avoid-ssl-verification-disabled'
 import { validateRedirectRule } from './validate-redirect'
+import { hashPasswordsRule } from './hash-passwords'
+import { enforceStrongPasswordRule } from './enforce-strong-password'
+import { regenerateSessionRule } from './regenerate-session'
 
 export const ruleSet = [
   noConsoleLogRule,
@@ -45,5 +48,8 @@ export const ruleSet = [
   detectHardcodedUrlsRule,
   useHttpsRule,
   avoidSslVerificationDisabledRule,
-  validateRedirectRule
+  validateRedirectRule,
+  hashPasswordsRule,
+  enforceStrongPasswordRule,
+  regenerateSessionRule
 ]
