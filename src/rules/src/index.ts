@@ -24,6 +24,10 @@ import { validateRedirectRule } from './validate-redirect'
 import { hashPasswordsRule } from './hash-passwords'
 import { enforceStrongPasswordRule } from './enforce-strong-password'
 import { regenerateSessionRule } from './regenerate-session'
+import { noDebuggerRule } from './no-debugger'
+import { noAlertRule } from './no-alert'
+import { handleErrorsRule } from './handle-errors'
+import { avoidDuplicateImportsRule } from './avoid-duplicate-imports'
 
 export const ruleSet = [
   noConsoleLogRule,
@@ -51,5 +55,9 @@ export const ruleSet = [
   validateRedirectRule,
   hashPasswordsRule,
   enforceStrongPasswordRule,
-  regenerateSessionRule
+  regenerateSessionRule,
+  noDebuggerRule,
+  noAlertRule,
+  handleErrorsRule,
+  avoidDuplicateImportsRule
 ]

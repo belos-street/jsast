@@ -44,6 +44,11 @@ export type RuleName =
   | 'hash-passwords'
   | 'enforce-strong-password'
   | 'regenerate-session'
+  | 'no-debugger'
+  | 'no-alert'
+  | 'handle-errors'
+  | 'check-unused-vars'
+  | 'avoid-duplicate-imports'
 
 export type RuleIssue = Omit<ReportIssue, 'severity' | 'rule' | 'filename'>
 

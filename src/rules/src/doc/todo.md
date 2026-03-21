@@ -145,39 +145,29 @@
   - 检测: `if (password.length < 6)`
   - 建议: 实施强密码策略
 
-- `regenerate-session`: 检测会话固定风险
+- `regenerate-session`: 检测会话固定风险 ✅
   - 检测: 未在登录后重新生成session ID
   - 建议: 登录后重新生成session
 
 ---
 
-## 10. 不安全的依赖 (Insecure Dependencies)
 
-### 待实现规则
-- `check-outdated-dependencies`: 检测过时的依赖包
-  - 建议: 使用npm audit或yarn audit
-
-- `check-vulnerable-dependencies`: 检测已知漏洞的依赖
-  - 建议: 定期更新依赖包
-
----
-
-## 11. 代码质量 (Code Quality) - 已实现 ✅
+## 10. 代码质量 (Code Quality) - 已实现 ✅
 
 ### 已实现规则
 - `no-var`: 禁止使用var关键字
 - `no-console-log`: 禁止使用console.log
 
 ### 可扩展规则
-- `no-debugger`: 禁止使用debugger语句
-- `no-alert`: 禁止使用alert
-- `handle-errors`: 禁止空的catch块
+- `no-debugger`: 禁止使用debugger语句 ✅
+- `no-alert`: 禁止使用alert ✅
+- `handle-errors`: 禁止空的catch块 ✅
 - `check-unused-vars`: 检测未使用的变量
 - `avoid-duplicate-imports`: 检测重复的导入
 
 ---
 
-## 12. 其他安全规则 (Other Security Rules)
+## 11. 其他安全规则 (Other Security Rules)
 
 ### 待实现规则
 - `validate-regexp`: 检测不安全的正则表达式
