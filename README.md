@@ -185,6 +185,36 @@ Create a `.jsastrc.json` file in your project root:
 }
 ```
 
+## Report Formats
+
+### Console Reporter (Default)
+
+The default output format displays issues directly in the terminal with color-coded severity levels:
+
+```
+📁 File: ./src/example.js
+------------------------------------------------------------
+  💥 [command-injection] Potential command injection detected
+     Location: Line 5, Column 10
+     File: ./src/example.js:5:10
+
+Total: 1 issues found
+```
+
+### SARIF Reporter
+
+Generate SARIF (Static Analysis Results Interchange Format) reports for integration with CI/CD systems:
+
+```bash
+bun run src/main.ts --sarif ./report.json ./src
+```
+
+This generates a SARIF 2.1.0 compliant JSON report that can be uploaded to:
+- GitHub Security tab
+- Azure DevOps
+- VS Code (with SARIF viewer extension)
+- Other SARIF-compatible tools
+
 ## Development
 
 ### Running Tests
@@ -253,17 +283,16 @@ export type RuleName =
 ```
 jsast/
 ├── src/
-│   ├── core/                 # Core analysis engine
-│   │   ├── analyzer.ts        # Main analyzer class
-│   │   ├── parser.ts          # Babel parser wrapper
-│   │   └── traverser.ts      # AST traverser
-│   ├── rules/                 # Security and quality rules
-│   │   └── src/
-│   │       ├── index.ts       # Rule exports
-│   │       └── *.ts           # Individual rule implementations
-│   ├── report/                # Report generation
-│   ├── __test__/              # Unit tests
-│   └── main.ts                # CLI entry point
+│   ├── main.ts                # CLI entry point
+│   ├── cli/                   # CLI command handlers
+│   ├── config/                # Configuration management
+│   ├── core/                  # Core analysis engine
+│   ├── parse/                  # File parsing and rule processing
+│   ├── report/                 # Report generation
+│   ├── rules/                  # Security and quality rules
+│   │   └── src/                # Individual rule implementations
+│   ├── utils/                  # Utility functions
+│   └── __test__/               # Unit tests
 ├── package.json
 ├── tsconfig.json
 └── README.md
