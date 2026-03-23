@@ -28,6 +28,9 @@ import { noDebuggerRule } from './no-debugger'
 import { noAlertRule } from './no-alert'
 import { handleErrorsRule } from './handle-errors'
 import { avoidDuplicateImportsRule } from './avoid-duplicate-imports'
+import { validateRegexpRule } from './validate-regexp'
+import { avoidDynamicAssignmentRule } from './avoid-dynamic-assignment'
+import { preventPrototypePollutionRule } from './prevent-prototype-pollution'
 
 export const ruleSet = [
   noConsoleLogRule,
@@ -59,5 +62,8 @@ export const ruleSet = [
   noDebuggerRule,
   noAlertRule,
   handleErrorsRule,
-  avoidDuplicateImportsRule
+  avoidDuplicateImportsRule,
+  validateRegexpRule,
+  avoidDynamicAssignmentRule,
+  preventPrototypePollutionRule
 ]

@@ -49,6 +49,9 @@ export type RuleName =
   | 'handle-errors'
   | 'check-unused-vars'
   | 'avoid-duplicate-imports'
+  | 'validate-regexp'
+  | 'avoid-dynamic-assignment'
+  | 'prevent-prototype-pollution'
 
 export type RuleIssue = Omit<ReportIssue, 'severity' | 'rule' | 'filename'>
 
